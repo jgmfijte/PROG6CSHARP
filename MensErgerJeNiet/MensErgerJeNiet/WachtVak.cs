@@ -10,6 +10,21 @@ namespace MensErgerJeNiet
     {
         public WachtVak(Pion p, string kleur)
         {
+            Pion = p;
+        }
+
+        public void BrengPionInSpel()
+        {
+            if (Pion != null)
+            {
+                if (Pion.Eigenaar.StartVak.Pion != null)
+                {
+                    StuurPionTerug(Pion.Eigenaar.StartVak.Pion);
+                }
+                Pion.Eigenaar.StartVak.KrijgPion(Pion);
+                Pion = null;
+                SetImage(Pion.Eigenaar.Kleur + "leeg SpelerVak");
+            }
         }
     }
 }
