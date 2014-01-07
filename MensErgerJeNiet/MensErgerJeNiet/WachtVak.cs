@@ -8,6 +8,7 @@ namespace MensErgerJeNiet
 {
     public class WachtVak : Vak
     {
+        public Speler VakEigenaar { get; set; }
         public WachtVak(Pion p, string kleur)
         {
             Pion = p;
