@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MensErgerJeNiet
 {
-    class Dobbelsteen
+    public class Dobbelsteen
     {
         public int Waarde { get; set; }
 

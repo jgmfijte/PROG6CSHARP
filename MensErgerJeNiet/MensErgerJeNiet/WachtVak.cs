@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MensErgerJeNiet
 {
-    class WachtVak : Vak
+    public class WachtVak : Vak
     {
         public WachtVak(Pion p, string kleur)
         {

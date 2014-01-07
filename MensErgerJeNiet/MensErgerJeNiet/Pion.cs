@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MensErgerJeNiet
 {
-    class Pion
+    public class Pion
     {
         public Speler Eigenaar { get; set; }
 

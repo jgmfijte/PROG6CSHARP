@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MensErgerJeNiet
 {
-    class ThuisVak : Vak
+    public class ThuisVak : Vak
     {
         public bool HeeftPion()
         {

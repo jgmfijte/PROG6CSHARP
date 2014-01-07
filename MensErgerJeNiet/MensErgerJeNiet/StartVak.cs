@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MensErgerJeNiet
 {
-    class StartVak : Vak
+    public class StartVak : Vak
     {
     }
 }
