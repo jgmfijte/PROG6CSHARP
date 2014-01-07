@@ -53,6 +53,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Dobbelsteen.cs" />
+    <Compile Include="Pion.cs" />
+    <Compile Include="PoortVak.cs" />
+    <Compile Include="Speler.cs" />
+    <Compile Include="StartVak.cs" />
+    <Compile Include="ThuisVak.cs" />
+    <Compile Include="Vak.cs" />
+    <Compile Include="WachtVak.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
