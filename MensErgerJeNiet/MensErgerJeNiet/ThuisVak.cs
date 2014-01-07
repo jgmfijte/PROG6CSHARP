@@ -8,6 +8,7 @@ namespace MensErgerJeNiet
 {
     public class ThuisVak : Vak
     {
+        public Speler VakEigenaar { get; set; }
         public bool HeeftPion()
         {
             return false;

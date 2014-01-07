@@ -12,6 +12,7 @@ namespace MensErgerJeNiet
         public Vak[] ThuisVakken { get; set; }
         public List<WachtVak> WachtVakken { get; set; }
         public StartVak StartVak { get; set; }
+        public PoortVak PoortVak { get; set; }
 
         public Speler(string kleur, StartVak startVak)
         {

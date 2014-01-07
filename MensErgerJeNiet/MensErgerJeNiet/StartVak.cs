@@ -8,5 +8,6 @@ namespace MensErgerJeNiet
 {
     public class StartVak : Vak
     {
+        public Speler VakEigenaar { get; set; }
     }
 }
