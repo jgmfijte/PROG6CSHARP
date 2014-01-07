@@ -8,10 +8,10 @@ namespace MensErgerJeNiet
 {
     public class Speler
     {
-        public string Kleur { get; private set; }
+        public string Kleur { get; set; }
         public Vak[] ThuisVakken { get; set; }
         public List<WachtVak> WachtVakken { get; set; }
-        public StartVak StartVak { get; private set; }
+        public StartVak StartVak { get; set; }
 
         public Speler(string kleur, StartVak startVak)
         {
