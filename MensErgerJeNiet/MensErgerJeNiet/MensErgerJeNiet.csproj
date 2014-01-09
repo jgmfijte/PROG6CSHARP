@@ -102,8 +102,21 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Media\" />
+    <Resource Include="Media\BlauwPionVak.png" />
+    <Resource Include="Media\BlauwStartVak.png" />
+    <Resource Include="Media\BlauwThuisVak.png" />
+    <Resource Include="Media\GeelPionVak.png" />
+    <Resource Include="Media\GeelStartVak.png" />
+    <Resource Include="Media\GeelThuisVak.png" />
+    <Resource Include="Media\RoodPionVak.png" />
+    <Resource Include="Media\RoodStartVak.png" />
+    <Resource Include="Media\RoodThuisVak.png" />
+    <Resource Include="Media\Vak.png" />
+    <Resource Include="Media\ZwartPionVak.png" />
+    <Resource Include="Media\ZwartStartVak.png" />
+    <Resource Include="Media\ZwartThuisVak.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

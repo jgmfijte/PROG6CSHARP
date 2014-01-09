@@ -9,6 +9,14 @@ namespace MensErgerJeNiet
     public class ThuisVak : Vak
     {
         public Speler VakEigenaar { get; set; }
+        public string Kleur { get; set; }
+
+        public ThuisVak(string kleur)
+        {
+            SetImage(Kleur + "Thuis");
+            this.Kleur = kleur;
+        }
+
         public bool HeeftPion()
         {
             return false;

@@ -52,15 +52,15 @@ namespace MensErgerJeNiet
         {
             for (int c = 0; c < 4; c++)
             {
-                ThuisVakjesPlayer1.AddFirst(new ThuisVak());
-                ThuisVakjesPlayer2.AddFirst(new ThuisVak());
+                ThuisVakjesPlayer1.AddFirst(new ThuisVak(speler1.Kleur));
+                ThuisVakjesPlayer2.AddFirst(new ThuisVak(speler2.Kleur));
             }
 
             if (speler3 != null)
             {
                 for (int c = 0; c < 4; c++)
                 {
-                    ThuisVakjesPlayer3.AddFirst(new ThuisVak());
+                    ThuisVakjesPlayer3.AddFirst(new ThuisVak(speler3.Kleur));
                 }
             }
 
@@ -68,7 +68,7 @@ namespace MensErgerJeNiet
             {
                 for (int c = 0; c < 4; c++)
                 {
-                    ThuisVakjesPlayer4.AddFirst(new ThuisVak());
+                    ThuisVakjesPlayer4.AddFirst(new ThuisVak(speler4.Kleur));
                 }
             }
         }
