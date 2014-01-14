@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Documents;
+using System.Windows.Media;
 
 namespace MensErgerJeNiet
 {
@@ -76,24 +77,25 @@ namespace MensErgerJeNiet
         private void MaakBord()
         {
             LinkedList<ThuisVak> ThuisVakjeLinkedList = new LinkedList<ThuisVak>();
+
             for (int c = 0; c < 4; c++)
             {
-                ThuisVakjeLinkedList.AddFirst(new ThuisVak());
+                ThuisVakjeLinkedList.AddFirst(new ThuisVak(Model.SpelersKleurenSingleton.Instance.GetKleuren()[(c + 1)]));
             }
 
-                VakjesLinkedList.AddFirst(speler1.StartVak = new StartVak());
+                VakjesLinkedList.AddFirst(speler1.StartVak);
             for (int c = 0; c < 8; c++ )
                 VakjesLinkedList.AddLast(new Vak());
 
             VakjesLinkedList.AddLast(speler2.PoortVak = new PoortVak(ThuisVakjesPlayer2));
-            VakjesLinkedList.AddLast(speler2.StartVak = new StartVak());
+            VakjesLinkedList.AddLast(speler2.StartVak);
             for (int c = 0; c < 8; c++)
                 VakjesLinkedList.AddLast(new Vak());
 
             if (speler3 != null)
             {
                 VakjesLinkedList.AddLast(speler3.PoortVak = new PoortVak(ThuisVakjesPlayer3));
-                VakjesLinkedList.AddLast(speler3.StartVak = new StartVak());
+                VakjesLinkedList.AddLast(speler3.StartVak);
             }
             else
             {
@@ -106,7 +108,7 @@ namespace MensErgerJeNiet
             if (speler4 != null)
             {
                 VakjesLinkedList.AddLast(speler4.PoortVak = new PoortVak(ThuisVakjesPlayer4));
-                VakjesLinkedList.AddLast(speler4.StartVak = new StartVak());
+                VakjesLinkedList.AddLast(speler4.StartVak);
             }
             else
             {

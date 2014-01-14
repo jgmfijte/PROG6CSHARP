@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace MensErgerJeNiet
 {
     public class Speler
     {
-        public string Kleur { get; set; }
+        public Color Kleur { get; set; }
         public Vak[] ThuisVakken { get; set; }
         public List<WachtVak> WachtVakken { get; set; }
         public StartVak StartVak { get; set; }
         public PoortVak PoortVak { get; set; }
+        public bool isComputer { get; set; }
 
-        public Speler(string kleur, StartVak startVak)
+        public Speler(Color kleur, StartVak startVak, bool isComputer)
         {
             this.Kleur = kleur;
             this.StartVak = startVak;
+            this.isComputer = isComputer;
             ThuisVakken = new ThuisVak[4];
             WachtVakken = new List<WachtVak>();
 

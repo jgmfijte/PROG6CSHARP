@@ -53,15 +53,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Bord.cs" />
-    <Compile Include="Dobbelsteen.cs" />
-    <Compile Include="Pion.cs" />
-    <Compile Include="PoortVak.cs" />
-    <Compile Include="Speler.cs" />
-    <Compile Include="StartVak.cs" />
-    <Compile Include="ThuisVak.cs" />
-    <Compile Include="Vak.cs" />
-    <Compile Include="WachtVak.cs" />
+    <Compile Include="Model\Bord.cs" />
+    <Compile Include="Model\Dobbelsteen.cs" />
+    <Compile Include="Model\Pion.cs" />
+    <Compile Include="Model\PoortVak.cs" />
+    <Compile Include="Model\Speler.cs" />
+    <Compile Include="Model\SpelerKleurenSingleton.cs" />
+    <Compile Include="Model\StartVak.cs" />
+    <Compile Include="Model\ThuisVak.cs" />
+    <Compile Include="Model\Vak.cs" />
+    <Compile Include="Model\WachtVak.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -74,6 +75,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Skins\StandardSkin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace MensErgerJeNiet
 {
@@ -10,7 +11,7 @@ namespace MensErgerJeNiet
     {
         public Speler VakEigenaar { get; set; }
 
-        public WachtVak(Pion p, string kleur)
+        public WachtVak(Pion p, Color kleur)
         {
             Pion = p;
             SetImage(kleur + "Pion");
