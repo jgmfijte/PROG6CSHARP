@@ -78,10 +78,10 @@ namespace MensErgerJeNiet
         {
             LinkedList<ThuisVak> ThuisVakjeLinkedList = new LinkedList<ThuisVak>();
 
-            for (int c = 0; c < 4; c++)
-            {
-                ThuisVakjeLinkedList.AddFirst(new ThuisVak(Model.SpelersKleurenSingleton.Instance.GetKleuren()[(c + 1)]));
-            }
+            //for (int c = 0; c < 4; c++)
+            //{
+            //    ThuisVakjeLinkedList.AddFirst(new ThuisVak(Model.SpelersKleurenSingleton.Instance.GetKleuren()[(c + 1)]));
+            //}
 
                 VakjesLinkedList.AddFirst(speler1.StartVak);
             for (int c = 0; c < 8; c++ )

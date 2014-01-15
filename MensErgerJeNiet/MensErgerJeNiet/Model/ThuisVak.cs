@@ -10,9 +10,9 @@ namespace MensErgerJeNiet
     public class ThuisVak : Vak
     {
         public Speler VakEigenaar { get; set; }
-        public Color Kleur { get; set; }
+        public string Kleur { get; set; }
 
-        public ThuisVak(Color kleur)
+        public ThuisVak(string kleur)
         {
             SetImage(Kleur + "Thuis");
             this.Kleur = kleur;

@@ -9,5 +9,12 @@ namespace MensErgerJeNiet
     public class StartVak : Vak
     {
         public Speler VakEigenaar { get; set; }
+        private string kleur;
+
+        public StartVak(string kleur)
+        {
+            SetImage(kleur + "Start");
+            this.kleur = kleur;
+        }
     }
 }

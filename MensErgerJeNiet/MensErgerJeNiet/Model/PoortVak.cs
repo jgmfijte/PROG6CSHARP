@@ -10,10 +10,11 @@ namespace MensErgerJeNiet
     {
         private LinkedList<ThuisVak> _ThuisVakken = new LinkedList<ThuisVak>();
 
-        public PoortVak(LinkedList<ThuisVak> thuisVakken)
+        public PoortVak(/*LinkedList<ThuisVak> thuisVakken*/)
         {
-            this._ThuisVakken = thuisVakken;
-            ZijVak = _ThuisVakken.First();
+            SetImage("Leeg");
+            //this._ThuisVakken = thuisVakken;
+            //ZijVak = _ThuisVakken.First();
         }
 
         public void Verplaats(int steps)

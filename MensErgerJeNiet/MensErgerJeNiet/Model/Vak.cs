@@ -17,7 +17,7 @@ namespace MensErgerJeNiet
         public Pion Pion { get; set; }
         public Pion TempPion { get; set; }
         public ImageBrush BackgroundImage { get; set; }
-        public Color VakColor { get; set; }
+        public string VakColor { get; set; }
 
         public Vak()
         {
