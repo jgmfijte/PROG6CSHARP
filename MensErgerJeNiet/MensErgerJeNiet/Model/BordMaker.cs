@@ -13,9 +13,9 @@ namespace MensErgerJeNiet.Model
         {
         }
 
-        public ObservableCollection<Vak> maakBord(int aantalSpelers)
+        public Collection<Vak> maakBord(int aantalSpelers)
         {
-            ObservableCollection<Vak> l = new ObservableCollection<Vak>();
+            Collection<Vak> l = new Collection<Vak>();
 
             l.Add(new StartVak("rood"));                    //0 rood start
             for (int i = 1; i < 9; i++)                 //1-8 leeg vakje
