@@ -63,11 +63,11 @@
     <Compile Include="Model\Bord.cs" />
     <Compile Include="Model\Bord2.cs" />
     <Compile Include="Model\BordMaker.cs" />
-    <Compile Include="Model\Dobbelsteen.cs" />
+    <Compile Include="Model\DobbelsteenSingleton.cs" />
     <Compile Include="Model\Pion.cs" />
     <Compile Include="Model\PoortVak.cs" />
-    <Compile Include="Spel.xaml.cs">
-      <DependentUpon>Spel.xaml</DependentUpon>
+    <Compile Include="SpelWindow.xaml.cs">
+      <DependentUpon>SpelWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Speler.cs" />
     <Compile Include="Model\SpelerKleurenSingleton.cs" />
@@ -87,7 +87,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Spel.xaml">
+    <Page Include="SpelWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

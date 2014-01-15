@@ -16,11 +16,11 @@ namespace MensErgerJeNiet
         public PoortVak PoortVak { get; set; }
         public bool isComputer { get; set; }
 
-        public Speler(string kleur, StartVak startVak/*, bool isComputer*/)
+        public Speler(string kleur, StartVak startVak, bool isComputer)
         {
             this.Kleur = kleur;
             this.StartVak = startVak;
-            /*this.isComputer = isComputer;*/
+            this.isComputer = isComputer;
             ThuisVakken = new ThuisVak[4];
             WachtVakken = new List<WachtVak>();
 

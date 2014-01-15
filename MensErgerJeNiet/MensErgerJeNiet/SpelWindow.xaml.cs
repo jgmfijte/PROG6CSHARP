@@ -17,11 +17,18 @@ namespace MensErgerJeNiet.Model
     /// <summary>
     /// Interaction logic for Spel.xaml
     /// </summary>
-    public partial class Spel : Window
+    public partial class SpelWindow : Window
     {
-        public Spel()
+        public SpelWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            int dobbelWaarde = DobbelsteenSingleton.Instance.GooiDobbelsteen();
+
+            DobbelValue.Content = dobbelWaarde;
         }
     }
 }

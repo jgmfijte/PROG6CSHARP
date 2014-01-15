@@ -12,13 +12,13 @@ namespace MensErgerJeNiet.Model
         public Collection<Vak> SpelVakken { get; set; }
         public Collection<Speler> Spelers { get; set; }
 
-        public Bord2(int spelers)
+        public Bord2(int realSpelers, int computerSpelers)
         {
             SpelVakken = new Collection<Vak>();
             Spelers = new Collection<Speler>();
             MaakBord();
-            MaakSpelers(spelers);
-            GeefSpelersThuisvakken(spelers);
+            MaakSpelers(realSpelers, computerSpelers);
+            GeefSpelersThuisvakken(realSpelers + computerSpelers);
         }
 
         private void MaakBord()
@@ -27,30 +27,68 @@ namespace MensErgerJeNiet.Model
             SpelVakken = s.maakBord();
         }
 
-        private void MaakSpelers(int spelers)
+        private void MaakSpelers(int realSpelers, int computerSpelers)
         {
-            if ((spelers > 1) && (spelers <= 4))
+            if (realSpelers >= 1 && realSpelers <= 4)
             {
-                switch (spelers)
-                {
-                    case 2:
-                        Spelers.Add(new Speler("rood", (StartVak)SpelVakken[0]));
-                        Spelers.Add(new Speler("blauw", (StartVak)SpelVakken[10]));
-                        break;
-                    case 3:
-                        Spelers.Add(new Speler("rood", (StartVak)SpelVakken[0]));
-                        Spelers.Add(new Speler("blauw", (StartVak)SpelVakken[10]));
-                        Spelers.Add(new Speler("groen", (StartVak)SpelVakken[30]));
-                        break;
-                    case 4:
-                        Spelers.Add(new Speler("rood", (StartVak)SpelVakken[0]));
-                        Spelers.Add(new Speler("blauw", (StartVak)SpelVakken[10]));
-                        Spelers.Add(new Speler("groen", (StartVak)SpelVakken[20]));
-                        Spelers.Add(new Speler("geel", (StartVak)SpelVakken[30]));
-                        break;
+                Spelers.Add(new Speler("rood", (StartVak)SpelVakken[0], false));
 
+                if (realSpelers >= 2)
+                {
+                    Spelers.Add(new Speler("blauw", (StartVak)SpelVakken[10], false));
+                }
+
+                if (realSpelers >= 3)
+                {
+                    Spelers.Add(new Speler("groen", (StartVak)SpelVakken[20], false));
+                }
+
+                if (realSpelers == 4)
+                {
+                    Spelers.Add(new Speler("geel", (StartVak)SpelVakken[30], false));
                 }
             }
+
+            if (realSpelers != 4 && computerSpelers > 0 && computerSpelers < 4)
+            {
+                if (computerSpelers <= 4)
+                {
+                    Spelers.Add(new Speler("geel", (StartVak)SpelVakken[30], true));
+                }
+
+                if (realSpelers <= 3)
+                {
+                    Spelers.Add(new Speler("groen", (StartVak)SpelVakken[20], true));
+                }
+
+                if (realSpelers == 2)
+                {
+                    Spelers.Add(new Speler("blauw", (StartVak)SpelVakken[10], true));
+                }
+            }
+
+            //if ((realSpelers > 1) && (spelers <= 4))
+            //{
+            //    switch (spelers)
+            //    {
+            //        case 2:
+            //            Spelers.Add(new Speler("rood", (StartVak)SpelVakken[0]));
+            //            Spelers.Add(new Speler("blauw", (StartVak)SpelVakken[10]));
+            //            break;
+            //        case 3:
+            //            Spelers.Add(new Speler("rood", (StartVak)SpelVakken[0]));
+            //            Spelers.Add(new Speler("blauw", (StartVak)SpelVakken[10]));
+            //            Spelers.Add(new Speler("groen", (StartVak)SpelVakken[30]));
+            //            break;
+            //        case 4:
+            //            Spelers.Add(new Speler("rood", (StartVak)SpelVakken[0]));
+            //            Spelers.Add(new Speler("blauw", (StartVak)SpelVakken[10]));
+            //            Spelers.Add(new Speler("groen", (StartVak)SpelVakken[20]));
+            //            Spelers.Add(new Speler("geel", (StartVak)SpelVakken[30]));
+            //            break;
+            //
+            //    }
+            //}
         }
 
         private void GeefSpelersThuisvakken(int spelers)
