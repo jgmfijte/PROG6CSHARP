@@ -11,7 +11,7 @@ namespace MensErgerJeNiet
     {
         public Speler VakEigenaar { get; set; }
 
-        public WachtVak(Pion p, Color kleur)
+        public WachtVak(Pion p, string kleur)
         {
             Pion = p;
             SetImage(kleur + "Pion");

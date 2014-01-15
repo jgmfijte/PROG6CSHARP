@@ -9,18 +9,18 @@ namespace MensErgerJeNiet
 {
     public class Speler
     {
-        public Color Kleur { get; set; }
+        public string Kleur { get; set; }
         public Vak[] ThuisVakken { get; set; }
         public List<WachtVak> WachtVakken { get; set; }
         public StartVak StartVak { get; set; }
         public PoortVak PoortVak { get; set; }
         public bool isComputer { get; set; }
 
-        public Speler(Color kleur, StartVak startVak, bool isComputer)
+        public Speler(string kleur, StartVak startVak/*, bool isComputer*/)
         {
             this.Kleur = kleur;
             this.StartVak = startVak;
-            this.isComputer = isComputer;
+            /*this.isComputer = isComputer;*/
             ThuisVakken = new ThuisVak[4];
             WachtVakken = new List<WachtVak>();
 

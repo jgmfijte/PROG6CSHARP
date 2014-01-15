@@ -13,7 +13,7 @@ namespace MensErgerJeNiet.Model
         {
         }
 
-        public Collection<Vak> maakBord(int aantalSpelers)
+        public Collection<Vak> maakBord()
         {
             Collection<Vak> l = new Collection<Vak>();
 
