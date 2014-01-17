@@ -24,7 +24,7 @@ namespace MensErgerJeNiet
             ThuisVakken = new ThuisVak[4];
             WachtVakken = new List<WachtVak>();
 
-            for (int i = 0; i <= 4; i++)
+            for (int i = 0; i < 4; i++)
             {
                 WachtVakken.Add(new WachtVak(new Pion(this), kleur));
             }
@@ -35,7 +35,7 @@ namespace MensErgerJeNiet
             int counter = 0;
             foreach (ThuisVak thuis in ThuisVakken)
             {
-                if (thuis.HeeftPion() != null)
+                if (thuis.HeeftPion())
                 {
                     counter++;
                 }

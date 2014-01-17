@@ -66,6 +66,7 @@
     <Compile Include="Model\DobbelsteenSingleton.cs" />
     <Compile Include="Model\Pion.cs" />
     <Compile Include="Model\PoortVak.cs" />
+    <Compile Include="SpelController.cs" />
     <Compile Include="SpelWindow.xaml.cs">
       <DependentUpon>SpelWindow.xaml</DependentUpon>
     </Compile>

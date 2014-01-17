@@ -21,6 +21,7 @@ namespace MensErgerJeNiet
 
         public Vak()
         {
+            SetImage("Leeg");
         }
 
         public Vak(Pion p)
@@ -187,6 +188,7 @@ namespace MensErgerJeNiet
                 case "Leeg":
                     //normaal vak
                     BackgroundImage = new ImageBrush(new BitmapImage(new Uri("/Media/Vak.png", UriKind.Relative)));
+                    Console.WriteLine("test leeg");
                     BackgroundImage.Stretch = Stretch.Uniform;
                     break;
                 case "ZwartLeegSpelerVak":

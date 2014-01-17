@@ -20,7 +20,14 @@ namespace MensErgerJeNiet
 
         public bool HeeftPion()
         {
-            return false;
+            if (this.Pion != null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

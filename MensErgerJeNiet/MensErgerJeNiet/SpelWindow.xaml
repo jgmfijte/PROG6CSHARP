@@ -103,25 +103,25 @@
             <Button Name="v54_thuis1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="5" Grid.Row="3" Background="{Binding bord.SpelVakken[54].image}"/>
             <Button Name="v55_thuis1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="5" Grid.Row="4" Background="{Binding bord.SpelVakken[55].image}"/>
 
-            <Button Name="v56_wacht1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="8" Grid.Row="1" Background="{Binding bord.SpelVakken[56].image}"/>
-            <Button Name="v57_wacht1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="9" Grid.Row="1" Background="{Binding bord.SpelVakken[57].image}"/>
-            <Button Name="v58_wacht1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="8" Grid.Row="2" Background="{Binding bord.SpelVakken[58].image}"/>
-            <Button Name="v59_wacht1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="9" Grid.Row="2" Background="{Binding bord.SpelVakken[59].image}"/>
+            <Button Name="v56_wacht1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="8" Grid.Row="1" Background="{Binding bord.Spelers[0].WachtVakken[0].image}"/>
+            <Button Name="v57_wacht1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="9" Grid.Row="1" Background="{Binding bord.Spelers[0].WachtVakken[1].image}"/>
+            <Button Name="v58_wacht1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="8" Grid.Row="2" Background="{Binding bord.Spelers[0].WachtVakken[2].image}"/>
+            <Button Name="v59_wacht1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="9" Grid.Row="2" Background="{Binding bord.Spelers[0].WachtVakken[3].image}"/>
 
-            <Button Name="v60_wacht2" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="8" Grid.Row="8" Background="{Binding bord.SpelVakken[60].image}"/>
-            <Button Name="v61_wacht2" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="9" Grid.Row="8" Background="{Binding bord.SpelVakken[61].image}"/>
-            <Button Name="v62_wacht2" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="8" Grid.Row="9" Background="{Binding bord.SpelVakken[62].image}"/>
-            <Button Name="v63_wacht2" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="9" Grid.Row="9" Background="{Binding bord.SpelVakken[63].image}"/>
+            <Button Name="v60_wacht2" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="8" Grid.Row="8" Background="{Binding bord.Spelers[1].WachtVakken[0].image}"/>
+            <Button Name="v61_wacht2" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="9" Grid.Row="8" Background="{Binding bord.Spelers[1].WachtVakken[1].image}"/>
+            <Button Name="v62_wacht2" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="8" Grid.Row="9" Background="{Binding bord.Spelers[1].WachtVakken[2].image}"/>
+            <Button Name="v63_wacht2" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="9" Grid.Row="9" Background="{Binding bord.Spelers[1].WachtVakken[3].image}"/>
 
-            <Button Name="v64_wacht3" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="1" Grid.Row="8" Background="{Binding bord.SpelVakken[64].image}"/>
-            <Button Name="v65_wacht3" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="2" Grid.Row="8" Background="{Binding bord.SpelVakken[65].image}"/>
-            <Button Name="v66_wacht3" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="1" Grid.Row="9" Background="{Binding bord.SpelVakken[66].image}"/>
-            <Button Name="v67_wacht3" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="2" Grid.Row="9" Background="{Binding bord.SpelVakken[67].image}"/>
+            <Button Name="v64_wacht3" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="1" Grid.Row="8" Background="{Binding bord.Spelers[2].WachtVakken[0].image}"/>
+            <Button Name="v65_wacht3" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="2" Grid.Row="8" Background="{Binding bord.Spelers[2].WachtVakken[1].image}"/>
+            <Button Name="v66_wacht3" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="1" Grid.Row="9" Background="{Binding bord.Spelers[2].WachtVakken[2].image}"/>
+            <Button Name="v67_wacht3" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="2" Grid.Row="9" Background="{Binding bord.Spelers[2].WachtVakken[3].image}"/>
 
-            <Button Name="v68_wacht4" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="1" Grid.Row="1" Background="{Binding bord.SpelVakken[68].image}"/>
-            <Button Name="v69_wacht4" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="2" Grid.Row="1" Background="{Binding bord.SpelVakken[69].image}"/>
-            <Button Name="v70_wacht4" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="1" Grid.Row="2" Background="{Binding bord.SpelVakken[70].image}"/>
-            <Button Name="v71_wacht4" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="2" Grid.Row="2" Background="{Binding bord.SpelVakken[71].image}"/>
+            <Button Name="v68_wacht4" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="1" Grid.Row="1" Background="{Binding bord.Spelers[3].WachtVakken[0].image}"/>
+            <Button Name="v69_wacht4" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="2" Grid.Row="1" Background="{Binding bord.Spelers[3].WachtVakken[1].image}"/>
+            <Button Name="v70_wacht4" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="1" Grid.Row="2" Background="{Binding bord.Spelers[3].WachtVakken[2].image}"/>
+            <Button Name="v71_wacht4" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="2" Grid.Row="2" Background="{Binding bord.Spelers[3].WachtVakken[3].image}"/>
         </Grid>
         <GridSplitter HorizontalAlignment="Left" Height="339" Margin="435,20,0,0" VerticalAlignment="Top" Width="6"/>
         <Label Content="U GOOIDE:" HorizontalAlignment="Left" Margin="741,209,0,0" VerticalAlignment="Top" Width="231" FontSize="30pt" HorizontalContentAlignment="Center" FontWeight="bold" RenderTransformOrigin="0.529,0.154"/>
