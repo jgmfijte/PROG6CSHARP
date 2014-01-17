@@ -5,11 +5,11 @@
     <Grid>
         <Grid Margin="20,20,633,20">
             <Grid.RowDefinitions>
-                <RowDefinition Height="30" />
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
@@ -30,23 +30,23 @@
                 <ColumnDefinition Width="30"/>
                 <ColumnDefinition Width="30"/>
             </Grid.ColumnDefinitions>
-            <Button Name="v0_start1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="6" Grid.Row="0"/>
-            <Button Name="v1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="6" Grid.Row="1"/>
-            <Button Name="v2" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="6" Grid.Row="2"/>
-            <Button Name="v3" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="6" Grid.Row="3"/>
+            <Button Name="v0_start1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="6" Grid.Row="0" Background="{Binding bord.SpelVakken[0].image}"/>
+            <Button Name="v1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="6" Grid.Row="1" Background="{Binding bord.SpelVakken[1].image}"/>
+            <Button Name="v2" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="6" Grid.Row="2" Background="{Binding bord.SpelVakken[2].image}"/>
+            <Button Name="v3" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="6" Grid.Row="3" Background="{Binding bord.SpelVakken[3].image}"/>
 
-            <Button Name="v4_hoek" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="6" Grid.Row="4"/>
+            <Button Name="v4_hoek" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="6" Grid.Row="4" Background="{Binding bord.SpelVakken[4].image}"/>
 
-            <Button Name="v5" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="7" Grid.Row="4"/>
-            <Button Name="v6" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="8" Grid.Row="4"/>
-            <Button Name="v7" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="9" Grid.Row="4"/>
-            <Button Name="v8" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="10" Grid.Row="4"/>
+            <Button Name="v5" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="7" Grid.Row="4" Background="{Binding bord.SpelVakken[5].image}"/>
+            <Button Name="v6" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="8" Grid.Row="4" Background="{Binding bord.SpelVakken[6].image}"/>
+            <Button Name="v7" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="9" Grid.Row="4" Background="{Binding bord.SpelVakken[7].image}"/>
+            <Button Name="v8" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="10" Grid.Row="4" Background="{Binding bord.SpelVakken[8].image}"/>
 
-            <Button Name="v9_poort2" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="10" Grid.Row="5"/>
-            <Button Name="v10_start2" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="10" Grid.Row="6"/>
-            <Button Name="v11" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="9" Grid.Row="6"/>
-            <Button Name="v12" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="8" Grid.Row="6"/>
-            <Button Name="v13" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="7" Grid.Row="6"/>
+            <Button Name="v9_poort2" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="10" Grid.Row="5" Background="{Binding bord.SpelVakken[9].image}"/>
+            <Button Name="v10_start2" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="10" Grid.Row="6" Background="{Binding bord.SpelVakken[10].image}"/>
+            <Button Name="v11" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="9" Grid.Row="6" Background="{Binding bord.SpelVakken[11].image}"/>
+            <Button Name="v12" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="8" Grid.Row="6" Background="{Binding bord.SpelVakken[12].image}"/>
+            <Button Name="v13" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="7" Grid.Row="6" Background="{Binding bord.SpelVakken[13].image}"/>
 
             <Button Name="v14_Hoek" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="6" Grid.Row="6"/>
 
