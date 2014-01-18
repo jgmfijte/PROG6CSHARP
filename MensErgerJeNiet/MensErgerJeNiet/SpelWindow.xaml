@@ -31,9 +31,9 @@
                 <ColumnDefinition Width="30"/>
             </Grid.ColumnDefinitions>
             <Button Name="v0_start1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="6" Grid.Row="0" Background="{Binding bord.SpelVakken[0].image}"/>
-            <Button Name="v1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="6" Grid.Row="1" Background="{Binding bord.SpelVakken[1].image}"/>
-            <Button Name="v2" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="6" Grid.Row="2" Background="{Binding bord.SpelVakken[2].image}"/>
-            <Button Name="v3" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="6" Grid.Row="3" Background="{Binding bord.SpelVakken[3].image}"/>
+            <Button Name="v1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="6" Grid.Row="1" Background="{Binding spel.SpelVakken[1].BackgroundImage}"/>
+            <Button Name="v2" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="6" Grid.Row="2" Background="{Binding bord2.SpelVakken[2].BackgroundImage}"/>
+            <Button Name="v3" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="6" Grid.Row="3" Background="{Binding bord2.SpelVakken[3].image}"/>
 
             <Button Name="v4_hoek" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="6" Grid.Row="4" Background="{Binding bord.SpelVakken[4].image}"/>
 
@@ -129,5 +129,6 @@
         <Button Content="DOBBEL!" HorizontalAlignment="Left" Margin="462,209,0,0" VerticalAlignment="Top" Width="251" FontSize="40" Click="Button_Click" Height="150"/>
         <Label Content="Momenteel aan de beurt:" HorizontalAlignment="Left" Margin="462,20,0,0" VerticalAlignment="Top" Width="164" Height="42"/>
         <Label Name="DobbelValue" Content="0" HorizontalAlignment="Left" Margin="741,241,0,0" VerticalAlignment="Top" Height="118" FontSize="90" FontWeight="ExtraBold" HorizontalContentAlignment="Center" Width="231"/>
+
     </Grid>
 </Window>

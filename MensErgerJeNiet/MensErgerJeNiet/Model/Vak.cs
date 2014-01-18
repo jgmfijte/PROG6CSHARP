@@ -187,13 +187,14 @@ namespace MensErgerJeNiet
                 //cases met verschillende plaatjes
                 case "Leeg":
                     //normaal vak
-                    BackgroundImage = new ImageBrush(new BitmapImage(new Uri("/Media/Vak.png", UriKind.Relative)));
+                    BackgroundImage = new ImageBrush(new BitmapImage(new Uri("Media/Vak.png", UriKind.Relative)));
+                    //BackgroundImage = new ImageBrush(new BitmapImage(new Uri("../../Media/Vak.png",)));
                     Console.WriteLine("test leeg");
                     BackgroundImage.Stretch = Stretch.Uniform;
                     break;
                 case "ZwartLeegSpelerVak":
                     //thuis en wachtvak zwarte speler
-                    BackgroundImage = new ImageBrush(new BitmapImage(new Uri("/Media/ZwartThuisVak.png", UriKind.Relative)));
+                    BackgroundImage = new ImageBrush(new BitmapImage(new Uri("Media/ZwartThuisVak.png", UriKind.Relative)));
                     BackgroundImage.Stretch = Stretch.Uniform;
                     break;
                 case "GeelLeegSpelerVak":

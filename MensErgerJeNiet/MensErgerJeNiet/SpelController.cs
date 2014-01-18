@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MensErgerJeNiet.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,12 @@ namespace MensErgerJeNiet
 {
     public class SpelController
     {
+        public Bord2 bord;
+
         public SpelController(int realSpelers, int computerSpelers)
         {
-            new MensErgerJeNiet.Model.Bord2(realSpelers, computerSpelers);
+            bord = new Bord2(realSpelers, computerSpelers);
+            //new MensErgerJeNiet.Model.Bord2(realSpelers, computerSpelers);
             Console.WriteLine("eind");
         }
 

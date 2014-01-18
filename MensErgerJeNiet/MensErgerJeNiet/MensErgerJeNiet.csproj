@@ -124,7 +124,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Media\BlauwPionVak.png" />
     <Resource Include="Media\BlauwStartVak.png" />
@@ -135,7 +134,7 @@
     <Resource Include="Media\RoodPionVak.png" />
     <Resource Include="Media\RoodStartVak.png" />
     <Resource Include="Media\RoodThuisVak.png" />
-    <Resource Include="Media\Vak.png" />
+    <Content Include="Media\Vak.png" />
     <Resource Include="Media\ZwartPionVak.png" />
     <Resource Include="Media\ZwartStartVak.png" />
     <Resource Include="Media\ZwartThuisVak.png" />

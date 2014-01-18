@@ -27,7 +27,7 @@ namespace MensErgerJeNiet
                 }
                 Pion.Eigenaar.StartVak.KrijgPion(Pion);
                 Pion = null;
-                SetImage(Pion.Eigenaar.Kleur + "leeg SpelerVak");
+                SetImage("Leeg");
             }
         }
     }
