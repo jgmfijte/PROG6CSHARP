@@ -13,8 +13,8 @@ namespace MensErgerJeNiet
 
         public StartVak(string kleur)
         {
-            SetImage(kleur + "Start");
             this.kleur = kleur;
+            SetImage(kleur + "Start");
         }
     }
 }

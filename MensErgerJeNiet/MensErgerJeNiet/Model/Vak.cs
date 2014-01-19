@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -16,7 +17,7 @@ namespace MensErgerJeNiet
         public Vak ZijVak { get; set; }
         public Pion Pion { get; set; }
         public Pion TempPion { get; set; }
-        public ImageBrush BackgroundImage { get; set; }
+        public Uri BackgroundImage { get; set; }
         public string VakColor { get; set; }
 
         public Vak()
@@ -187,70 +188,55 @@ namespace MensErgerJeNiet
                 //cases met verschillende plaatjes
                 case "Leeg":
                     //normaal vak
-                    BackgroundImage = new ImageBrush(new BitmapImage(new Uri("Media/Vak.png", UriKind.Relative)));
-                    //BackgroundImage = new ImageBrush(new BitmapImage(new Uri("../../Media/Vak.png",)));
-                    Console.WriteLine("test leeg");
-                    BackgroundImage.Stretch = Stretch.Uniform;
+                    BackgroundImage = new Uri("./Media/Vak.png", UriKind.Relative);
                     break;
                 case "ZwartLeegSpelerVak":
                     //thuis en wachtvak zwarte speler
-                    BackgroundImage = new ImageBrush(new BitmapImage(new Uri("Media/ZwartThuisVak.png", UriKind.Relative)));
-                    BackgroundImage.Stretch = Stretch.Uniform;
+                    BackgroundImage = new Uri("./Media/ZwartThuisVak.png", UriKind.Relative);
                     break;
                 case "GeelLeegSpelerVak":
                     //thuis en wachtvak gele speler
-                    BackgroundImage = new ImageBrush(new BitmapImage(new Uri("/Media/GeelThuisVak.png", UriKind.Relative)));
-                    BackgroundImage.Stretch = Stretch.Uniform;
+                    BackgroundImage = new Uri("./Media/GeelThuisVak.png", UriKind.Relative);
                     break;
                 case "RoodLeegSpelerVak":
                     //thuis en wachtvak rode speler
-                    BackgroundImage = new ImageBrush(new BitmapImage(new Uri("/Media/RoodThuisVak.png", UriKind.Relative)));
-                    BackgroundImage.Stretch = Stretch.Uniform;
+                    BackgroundImage = new Uri("./Media/RoodThuisVak.png", UriKind.Relative);
                     break;
                 case "BlauwLeegSpelerVak":
                     //thuis en wachtvak blauwe speler
-                    BackgroundImage = new ImageBrush(new BitmapImage(new Uri("/Media/BlauwThuisVak.png", UriKind.Relative)));
-                    BackgroundImage.Stretch = Stretch.Uniform;
+                    BackgroundImage = new Uri("./Media/BlauwThuisVak.png", UriKind.Relative);
                     break;
                 case "ZwartPion":
                     //pion zwarte speler
-                    BackgroundImage = new ImageBrush(new BitmapImage(new Uri("/Media/ZwartPionVak.png", UriKind.Relative)));
-                    BackgroundImage.Stretch = Stretch.Uniform;
+                    BackgroundImage = new Uri("./Media/ZwartPionVak.png", UriKind.Relative);
                     break;
                 case "GeelPion":
                     //pion gele speler
-                    BackgroundImage = new ImageBrush(new BitmapImage(new Uri("/Media/GeelPionVak.png", UriKind.Relative)));
-                    BackgroundImage.Stretch = Stretch.Uniform;
+                    BackgroundImage = new Uri("./Media/GeelPionVak.png", UriKind.Relative);
                     break;
                 case "RoodPion":
                     //pion rode speler
-                    BackgroundImage = new ImageBrush(new BitmapImage(new Uri("/Media/RoodPionVak.png", UriKind.Relative)));
-                    BackgroundImage.Stretch = Stretch.Uniform;
+                    BackgroundImage = new Uri("./Media/RoodPionVak.png", UriKind.Relative);
                     break;
                 case "BlauwPion":
                     //pion blauwe speler
-                    BackgroundImage = new ImageBrush(new BitmapImage(new Uri("/Media/BlauwPionVak.png", UriKind.Relative)));
-                    BackgroundImage.Stretch = Stretch.Uniform;
+                    BackgroundImage = new Uri("./Media/BlauwPionVak.png", UriKind.Relative);
                     break;
                 case "ZwartStart":
                     //pion blauwe speler
-                    BackgroundImage = new ImageBrush(new BitmapImage(new Uri("/Media/ZwartStartVak.png", UriKind.Relative)));
-                    BackgroundImage.Stretch = Stretch.Uniform;
+                    BackgroundImage = new Uri("./Media/ZwartStartVak.png", UriKind.Relative);
                     break;
                 case "GeelStart":
                     //pion blauwe speler
-                    BackgroundImage = new ImageBrush(new BitmapImage(new Uri("/Media/GeelStartVak.png", UriKind.Relative)));
-                    BackgroundImage.Stretch = Stretch.Uniform;
+                    BackgroundImage = new Uri("./Media/GeelStartVak.png", UriKind.Relative);
                     break;
                 case "RoodStart":
                     //pion blauwe speler
-                    BackgroundImage = new ImageBrush(new BitmapImage(new Uri("/Media/RoodStartVak.png", UriKind.Relative)));
-                    BackgroundImage.Stretch = Stretch.Uniform;
+                    BackgroundImage = new Uri("./Media/RoodStartVak.png", UriKind.Relative);
                     break;
                 case "BlauwStart":
                     //pion blauwe speler
-                    BackgroundImage = new ImageBrush(new BitmapImage(new Uri("/Media/BlauwStartVak.png", UriKind.Relative)));
-                    BackgroundImage.Stretch = Stretch.Uniform;
+                    BackgroundImage = new Uri("./Media/BlauwStartVak.png", UriKind.Relative);
                     break;
                 default:
                     break;

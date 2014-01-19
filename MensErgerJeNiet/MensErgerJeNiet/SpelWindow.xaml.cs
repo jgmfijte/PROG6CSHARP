@@ -20,13 +20,13 @@ namespace MensErgerJeNiet.Model
     public partial class SpelWindow : Window
     {
         public SpelController spel;
+
         public SpelWindow(int realSpelers, int computerSpelers)
         {
             spel = new SpelController(realSpelers, computerSpelers);
+           
             InitializeComponent();
             DataContext = spel;
-
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

@@ -9,7 +9,7 @@ namespace MensErgerJeNiet
 {
     public class SpelController
     {
-        public Bord2 bord;
+        public Bord2 bord { get; set; }
 
         public SpelController(int realSpelers, int computerSpelers)
         {

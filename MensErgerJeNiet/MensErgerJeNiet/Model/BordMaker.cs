@@ -13,7 +13,7 @@ namespace MensErgerJeNiet.Model
         {
         }
 
-        public Collection<Vak> maakBord()
+        public Collection<Vak> maakBord(int Spelers)
         {
             Collection<Vak> l = new Collection<Vak>();
 
@@ -114,9 +114,36 @@ namespace MensErgerJeNiet.Model
             l.Add(new ThuisVak("Rood"));
             l.ElementAt(54).VolgendVak = l.ElementAt(55);
             l.ElementAt(55).VorigVak = l.ElementAt(54);
-            return l;
+            ////////
+            
+            if(Spelers >= 2){
+                for(int c = 56; c < 60; c++){
+                    // wachtvak toevoegen voor eerste speler
+                }
 
-            Console.WriteLine("Bord aangemaakt");
+                for (int c = 60; c < 64; c++)
+                {
+                    // wachtvak toevoegen voor tweede speler
+                }
+            }
+
+            if (Spelers >= 3)
+            {
+                for (int c = 64; c < 68; c++)
+                {
+                    // wachtvak toevoegen voor derde speler
+                }
+            }
+
+            if (Spelers >= 4)
+            {
+                for (int c = 68; c < 72; c++)
+                {
+                    // wachtvak toevoegen voor vierde speler
+                }
+            }
+            
+            return l;
         }
 
     }

@@ -16,15 +16,15 @@ namespace MensErgerJeNiet.Model
         {
             SpelVakken = new Collection<Vak>();
             Spelers = new Collection<Speler>();
-            MaakBord();
+            MaakBord(realSpelers + computerSpelers);
             MaakSpelers(realSpelers, computerSpelers);
             GeefSpelersThuisvakken(realSpelers + computerSpelers);
         }
 
-        private void MaakBord()
+        private void MaakBord(int spelers)
         {
             BordMaker s = new BordMaker();
-            SpelVakken = s.maakBord();
+            SpelVakken = s.maakBord(spelers);
         }
 
         private void MaakSpelers(int realSpelers, int computerSpelers)
@@ -93,50 +93,28 @@ namespace MensErgerJeNiet.Model
 
         private void GeefSpelersThuisvakken(int spelers)
         {
-            switch (spelers)
+            Spelers[0].ThuisVakken[0] = SpelVakken[52];
+            Spelers[0].ThuisVakken[1] = SpelVakken[53];
+            Spelers[0].ThuisVakken[2] = SpelVakken[54];
+            Spelers[0].ThuisVakken[3] = SpelVakken[55];
+            Spelers[1].ThuisVakken[0] = SpelVakken[40];
+            Spelers[1].ThuisVakken[1] = SpelVakken[41];
+            Spelers[1].ThuisVakken[2] = SpelVakken[42];
+            Spelers[1].ThuisVakken[3] = SpelVakken[43];
+
+            if (spelers >= 3)
             {
-                case 2:
-                    Spelers[0].ThuisVakken[0] = SpelVakken[52];
-                    Spelers[0].ThuisVakken[1] = SpelVakken[53];
-                    Spelers[0].ThuisVakken[2] = SpelVakken[54];
-                    Spelers[0].ThuisVakken[3] = SpelVakken[55];
-                    Spelers[1].ThuisVakken[0] = SpelVakken[40];
-                    Spelers[1].ThuisVakken[1] = SpelVakken[41];
-                    Spelers[1].ThuisVakken[2] = SpelVakken[42];
-                    Spelers[1].ThuisVakken[3] = SpelVakken[43];
-                    break;
-                case 3:
-                    Spelers[0].ThuisVakken[0] = SpelVakken[52];
-                    Spelers[0].ThuisVakken[1] = SpelVakken[53];
-                    Spelers[0].ThuisVakken[2] = SpelVakken[54];
-                    Spelers[0].ThuisVakken[3] = SpelVakken[55];
-                    Spelers[1].ThuisVakken[0] = SpelVakken[40];
-                    Spelers[1].ThuisVakken[1] = SpelVakken[41];
-                    Spelers[1].ThuisVakken[2] = SpelVakken[42];
-                    Spelers[1].ThuisVakken[3] = SpelVakken[43];
-                    Spelers[2].ThuisVakken[0] = SpelVakken[44];
-                    Spelers[2].ThuisVakken[1] = SpelVakken[45];
-                    Spelers[2].ThuisVakken[2] = SpelVakken[46];
-                    Spelers[2].ThuisVakken[3] = SpelVakken[47];
-                    break;
-                case 4:
-                    Spelers[0].ThuisVakken[0] = SpelVakken[52];//rood
-                    Spelers[0].ThuisVakken[1] = SpelVakken[53];
-                    Spelers[0].ThuisVakken[2] = SpelVakken[54];
-                    Spelers[0].ThuisVakken[3] = SpelVakken[55];
-                    Spelers[1].ThuisVakken[0] = SpelVakken[40];//blauw
-                    Spelers[1].ThuisVakken[1] = SpelVakken[41];
-                    Spelers[1].ThuisVakken[2] = SpelVakken[42];
-                    Spelers[1].ThuisVakken[3] = SpelVakken[43];
-                    Spelers[2].ThuisVakken[0] = SpelVakken[44];//groen
-                    Spelers[2].ThuisVakken[1] = SpelVakken[45];
-                    Spelers[2].ThuisVakken[2] = SpelVakken[46];
-                    Spelers[2].ThuisVakken[3] = SpelVakken[47];
-                    Spelers[3].ThuisVakken[0] = SpelVakken[48];//geel
-                    Spelers[3].ThuisVakken[1] = SpelVakken[49];
-                    Spelers[3].ThuisVakken[2] = SpelVakken[50];
-                    Spelers[3].ThuisVakken[3] = SpelVakken[51];
-                    break;
+                Spelers[2].ThuisVakken[0] = SpelVakken[44];
+                Spelers[2].ThuisVakken[1] = SpelVakken[45];
+                Spelers[2].ThuisVakken[2] = SpelVakken[46];
+                Spelers[2].ThuisVakken[3] = SpelVakken[47];
+            }
+
+            if (spelers == 4){
+                Spelers[3].ThuisVakken[0] = SpelVakken[48];
+                Spelers[3].ThuisVakken[1] = SpelVakken[49];
+                Spelers[3].ThuisVakken[2] = SpelVakken[50];
+                Spelers[3].ThuisVakken[3] = SpelVakken[51];
             }
         }
 

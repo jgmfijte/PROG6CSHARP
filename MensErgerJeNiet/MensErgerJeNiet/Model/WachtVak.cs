@@ -14,7 +14,7 @@ namespace MensErgerJeNiet
         public WachtVak(Pion p, string kleur)
         {
             Pion = p;
-            SetImage(kleur + "Pion");
+            base.SetImage(kleur + "Pion");
         }
 
         public void BrengPionInSpel()
@@ -27,7 +27,7 @@ namespace MensErgerJeNiet
                 }
                 Pion.Eigenaar.StartVak.KrijgPion(Pion);
                 Pion = null;
-                SetImage("Leeg");
+                base.SetImage("Leeg");
             }
         }
     }
