@@ -46,7 +46,7 @@
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[2].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v3" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="6" Grid.Row="3" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[3].BackgroundImage}"/>
@@ -64,19 +64,19 @@
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[5].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v6" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="8" Grid.Row="4" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[6].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v7" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="9" Grid.Row="4" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[7].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-                
+
             <Button x:Name="v8" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="10" Grid.Row="4" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[8].BackgroundImage}"/>
@@ -88,31 +88,31 @@
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[9].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-                
+
             <Button x:Name="v10_start2" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="10" Grid.Row="6" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[10].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-                
+
             <Button x:Name="v11" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="9" Grid.Row="6" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[11].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-                
+
             <Button x:Name="v12" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="8" Grid.Row="6" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[12].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-                
+
             <Button x:Name="v13" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="7" Grid.Row="6" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[13].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-                
+
             <Button x:Name="v14_Hoek" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="6" Grid.Row="6" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[14].BackgroundImage}"/>
@@ -130,13 +130,13 @@
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[16].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v17" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="6" Grid.Row="9" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[17].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v18" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="6" Grid.Row="10" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[18].BackgroundImage}"/>
@@ -148,25 +148,25 @@
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[19].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v20_start3" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="4" Grid.Row="10" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[20].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v21" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="4" Grid.Row="9" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[21].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v22" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="4" Grid.Row="8" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[22].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v23" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="4" Grid.Row="7" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[23].BackgroundImage}"/>
@@ -184,19 +184,19 @@
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[25].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-                
+
             <Button x:Name="v26" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="2" Grid.Row="6" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[26].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-                
+
             <Button x:Name="v27" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="1" Grid.Row="6" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[27].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v28" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="0" Grid.Row="6" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[28].BackgroundImage}"/>
@@ -208,25 +208,25 @@
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[29].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-                
+
             <Button x:Name="v30_start4" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="0" Grid.Row="4" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[30].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-                
+
             <Button x:Name="v31" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="1" Grid.Row="4" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[31].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-                
+
             <Button x:Name="v32" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="2" Grid.Row="4" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[32].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-                
+
             <Button x:Name="v33" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="3" Grid.Row="4" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[33].BackgroundImage}"/>
@@ -244,19 +244,19 @@
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[35].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-                
+
             <Button x:Name="v36" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="4" Grid.Row="2" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[36].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v37" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="4" Grid.Row="1" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[37].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v38" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="4" Grid.Row="0" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[38].BackgroundImage}"/>
@@ -274,19 +274,19 @@
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[40].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-                
+
             <Button x:Name="v41_thuis2" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="8" Grid.Row="5" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[41].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-                
+
             <Button x:Name="v42_thuis2" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="7" Grid.Row="5" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[42].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-                
+
             <Button x:Name="v43_thuis2" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="6" Grid.Row="5" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[43].BackgroundImage}"/>
@@ -298,19 +298,19 @@
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[44].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-                
+
             <Button x:Name="v45_thuis3" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="5" Grid.Row="8" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[45].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v46_thuis3" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="5" Grid.Row="7" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[46].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v47_thuis3" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="5" Grid.Row="6" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[47].BackgroundImage}"/>
@@ -322,19 +322,19 @@
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[48].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v49_thuis4" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="2" Grid.Row="5" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[49].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v50_thuis4" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="3" Grid.Row="5" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[50].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v51_thuis4" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="4" Grid.Row="5" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[51].BackgroundImage}"/>
@@ -346,19 +346,19 @@
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[52].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v53_thuis1" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="5" Grid.Row="2" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[53].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v54_thuis1" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="5" Grid.Row="3" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[54].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v55_thuis1" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="5" Grid.Row="4" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[55].BackgroundImage}"/>
@@ -370,19 +370,19 @@
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[56].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v57_wacht1" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="9" Grid.Row="1" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[57].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v58_wacht1" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="8" Grid.Row="2" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[58].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v59_wacht1" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="9" Grid.Row="2" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[59].BackgroundImage}"/>
@@ -394,19 +394,19 @@
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[60].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v61_wacht2" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="9" Grid.Row="8" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[61].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v62_wacht2" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="8" Grid.Row="9" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[62].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v63_wacht2" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="9" Grid.Row="9" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[63].BackgroundImage}"/>
@@ -418,19 +418,19 @@
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[64].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v65_wacht3" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="2" Grid.Row="8" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[65].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v66_wacht3" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="1" Grid.Row="9" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[66].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v67_wacht3" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="2" Grid.Row="9" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[67].BackgroundImage}"/>
@@ -442,7 +442,7 @@
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[68].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v69_wacht4" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="2" Grid.Row="1" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[69].BackgroundImage}"/>
@@ -454,7 +454,7 @@
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[70].BackgroundImage}"/>
                 </Button.Background>
             </Button>
-            
+
             <Button x:Name="v71_wacht4" Content="" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Grid.Column="2" Grid.Row="2" >
                 <Button.Background>
                     <ImageBrush ImageSource="{Binding bord.SpelVakken[71].BackgroundImage}"/>
@@ -465,8 +465,10 @@
         <Label Content="U GOOIDE:" HorizontalAlignment="Left" Margin="741,209,0,0" VerticalAlignment="Top" Width="231" FontSize="30pt" HorizontalContentAlignment="Center" FontWeight="bold" RenderTransformOrigin="0.529,0.154"/>
         <GridSplitter HorizontalAlignment="Left" Height="6" Margin="462,186,0,0" VerticalAlignment="Top" Width="510"/>
         <Button Content="DOBBEL!" HorizontalAlignment="Left" Margin="462,209,0,0" VerticalAlignment="Top" Width="251" FontSize="40" Click="Button_Click" Height="150"/>
-        <Label Content="Momenteel aan de beurt:" HorizontalAlignment="Left" Margin="462,20,0,0" VerticalAlignment="Top" Width="164" Height="42"/>
-        <Label x:Name="DobbelValue" Content="0" HorizontalAlignment="Left" Margin="741,241,0,0" VerticalAlignment="Top" Height="118" FontSize="90" FontWeight="ExtraBold" HorizontalContentAlignment="Center" Width="231"/>
+        <Label Content="Momenteel aan de beurt:" HorizontalAlignment="Left" Margin="462,20,0,0" VerticalAlignment="Top" Width="143" Height="27"/>
+        <Label x:Name="DobbelValue" HorizontalAlignment="Left" Margin="741,241,0,0" VerticalAlignment="Top" Height="118" FontSize="90" FontWeight="ExtraBold" HorizontalContentAlignment="Center" Width="231"/>
+        <Label x:Name="SpelerAanDeBeurt" HorizontalAlignment="Left" Margin="610,20,0,0" VerticalAlignment="Top" Height="27" Width="362"/>
+        <Label x:Name="ForegroundText" Content="HIER KOMT FOREGROUND TEXT" HorizontalAlignment="Left" Height="104" Margin="462,65,0,0" VerticalAlignment="Top" Width="510"/>
 
     </Grid>
 </Window>

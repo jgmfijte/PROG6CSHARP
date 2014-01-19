@@ -80,8 +80,6 @@ namespace MensErgerJeNiet
                 
                 if (totalSpelers >= 2 && totalSpelers <= 4)
                 {
-                    
-                    //new MensErgerJeNiet.Model.Bord2(realSpelers, computerSpelers);
                     new SpelWindow(realSpelers, computerSpelers).Show();
                     this.Close();
                 }

@@ -23,17 +23,15 @@ namespace MensErgerJeNiet.Model
 
         public SpelWindow(int realSpelers, int computerSpelers)
         {
-            spel = new SpelController(realSpelers, computerSpelers);
-           
             InitializeComponent();
+            
+            spel = new SpelController(realSpelers, computerSpelers, this);
             DataContext = spel;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            int dobbelWaarde = DobbelsteenSingleton.Instance.GooiDobbelsteen();
-
-            DobbelValue.Content = dobbelWaarde;
+            spel.GooiDobbelSteen();
         }
     }
 }

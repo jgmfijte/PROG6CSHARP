@@ -66,17 +66,15 @@
     <Compile Include="Model\DobbelsteenSingleton.cs" />
     <Compile Include="Model\Pion.cs" />
     <Compile Include="Model\PoortVak.cs" />
-    <Compile Include="SpelController.cs" />
+    <Compile Include="Controllers\SpelController.cs" />
     <Compile Include="SpelWindow.xaml.cs">
       <DependentUpon>SpelWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Speler.cs" />
-    <Compile Include="Model\SpelerKleurenSingleton.cs" />
     <Compile Include="Model\StartVak.cs" />
     <Compile Include="Model\ThuisVak.cs" />
     <Compile Include="Model\Vak.cs" />
     <Compile Include="Model\WachtVak.cs" />
-    <Compile Include="TestClass.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
