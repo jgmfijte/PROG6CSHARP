@@ -13,137 +13,186 @@ namespace MensErgerJeNiet.Model
         {
         }
 
-        public Collection<Vak> maakBord(int Spelers)
+        public List<Vak> maakBord(int spelers)
         {
-            Collection<Vak> l = new Collection<Vak>();
+            Vak[] l = new Vak[72];
 
-            l.Add(new StartVak("Rood"));                    //0 Rood start
-            for (int i = 1; i < 9; i++)                 //1-8 leeg vakje
+            // Bordvakjes initialiseren, thuisvakken worden nog niet gedaan
+            if (spelers >= 2)
             {
-                l.Add(new Vak());
-                l.ElementAt(i - 1).VolgendVak = l.ElementAt(i);
-                l.ElementAt(i).VorigVak = l.ElementAt(i - 1);
+                // Speler 1 tot speler 2, inclusief poortvak speler 2
+                l[0] = new StartVak("Rood");
+                for (int c = 1; c < 9; c++)
+                {
+                    l[c] = new Vak();
+                    l[c - 1].VolgendVak = l[c];
+                    l[c].VorigVak = l[c - 1];
+                }
+                l[9] = new PoortVak();
+                l[8].VolgendVak = l[9];
+                l[9].VorigVak = l[8];
+
+                // Speler 1 tot speler 2, inclusief poortvak speler 2
+                l[10] = new StartVak("Blauw");
+                l[9].VolgendVak = l[10];
+                l[10].VorigVak = l[9];
+                for (int c = 11; c < 19; c++)
+                {
+                    l[c] = new Vak();
+                    l[c - 1].VolgendVak = l[c];
+                    l[c].VorigVak = l[c - 1];
+                }
+                l[19] = new PoortVak();
+                l[18].VolgendVak = l[19];
+                l[19].VorigVak = l[18];
             }
-            l.Add(new PoortVak());                    //9 Blauw poortvakje
-            l.ElementAt(8).VolgendVak = l.ElementAt(9);
-            l.ElementAt(9).VorigVak = l.ElementAt(8);
-            l.Add(new StartVak("Blauw"));                    //10 Blauw start
-            l.ElementAt(9).VolgendVak = l.ElementAt(10);
-            l.ElementAt(10).VorigVak = l.ElementAt(9);
-            for (int i = 11; i < 19; i++)               //11-18 leeg vakje
+
+            if (spelers >= 3)
             {
-                l.Add(new Vak());
-                l.ElementAt(i - 1).VolgendVak = l.ElementAt(i);
-                l.ElementAt(i).VorigVak = l.ElementAt(i - 1);
+                l[20] = new StartVak("Zwart");
+                l[19].VolgendVak = l[20];
+                l[20].VorigVak = l[19];
+                for (int c = 21; c < 29; c++)
+                {
+                    l[c] = new Vak();
+                    l[c - 1].VolgendVak = l[c];
+                    l[c].VorigVak = l[c - 1];
+                }
+                l[29] = new PoortVak();
+                l[28].VolgendVak = l[29];
+                l[29].VorigVak = l[28];
             }
-            l.Add(new PoortVak());                    //19 Zwart poortvakje
-            l.ElementAt(18).VolgendVak = l.ElementAt(19);
-            l.ElementAt(19).VorigVak = l.ElementAt(18);
-            l.Add(new StartVak("Zwart"));            //20 Zwart startvakje
-            l.ElementAt(19).VolgendVak = l.ElementAt(20);
-            l.ElementAt(20).VorigVak = l.ElementAt(19);
-            for (int i = 21; i < 29; i++)               //21-28 leeg vakje
+            else
             {
-                l.Add(new Vak());
-                l.ElementAt(i - 1).VolgendVak = l.ElementAt(i);
-                l.ElementAt(i).VorigVak = l.ElementAt(i - 1);
+                for (int c = 20; c < 30; c++)
+                {
+                    l[c] = new Vak();
+                    l[c - 1].VolgendVak = l[c];
+                    l[c].VorigVak = l[c - 1];
+                }
             }
-            l.Add(new PoortVak());                    //29 Geel poortvakje
-            l.ElementAt(28).VolgendVak = l.ElementAt(29);
-            l.ElementAt(29).VorigVak = l.ElementAt(28);
-            l.Add(new StartVak("Geel"));                    //30 Geel startvakje
-            l.ElementAt(29).VolgendVak = l.ElementAt(30);
-            l.ElementAt(30).VorigVak = l.ElementAt(29);
-            for (int i = 31; i < 39; i++)               //31-38 lege vakjes
+
+            if (spelers == 4)
             {
-                l.Add(new Vak());
-                l.ElementAt(i - 1).VolgendVak = l.ElementAt(i);
-                l.ElementAt(i).VorigVak = l.ElementAt(i - 1);
+                l[30] = new StartVak("Geel");
+                l[29].VolgendVak = l[30];
+                l[30].VorigVak = l[29];
+                for (int c = 31; c < 39; c++)
+                {
+                    l[c] = new Vak();
+                    l[c - 1].VolgendVak = l[c];
+                    l[c].VorigVak = l[c - 1];
+                }
+                l[39] = new PoortVak();
+                l[38].VolgendVak = l[39];
+                l[39].VorigVak = l[38];
             }
-            l.Add(new PoortVak());                    //39 Rood poortvakje
-            l.ElementAt(38).VolgendVak = l.ElementAt(39);
-            l.ElementAt(39).VolgendVak = l.ElementAt(0);
-            l.Add(new ThuisVak("Blauw"));       //40-43 Blauwe thuisvakken
-            l.ElementAt(9).ZijVak = l.ElementAt(40);
-            l.ElementAt(40).VorigVak = l.ElementAt(9);
-            l.Add(new ThuisVak("Blauw"));
-            l.ElementAt(40).VolgendVak = l.ElementAt(41);
-            l.ElementAt(41).VorigVak = l.ElementAt(40);
-            l.Add(new ThuisVak("Blauw"));
-            l.ElementAt(41).VolgendVak = l.ElementAt(42);
-            l.ElementAt(42).VorigVak = l.ElementAt(41);
-            l.Add(new ThuisVak("Blauw"));
-            l.ElementAt(42).VolgendVak = l.ElementAt(43);
-            l.ElementAt(43).VorigVak = l.ElementAt(42);
-            /////////
-            l.Add(new ThuisVak("Zwart"));
-            l.ElementAt(19).ZijVak = l.ElementAt(44);     //44-47 Zwarte thuisvakken
-            l.ElementAt(44).VorigVak = l.ElementAt(19);
-            l.Add(new ThuisVak("Zwart"));
-            l.ElementAt(44).VolgendVak = l.ElementAt(45);
-            l.ElementAt(45).VorigVak = l.ElementAt(44);
-            l.Add(new ThuisVak("Zwart"));
-            l.ElementAt(45).VolgendVak = l.ElementAt(46);
-            l.ElementAt(46).VorigVak = l.ElementAt(45);
-            l.Add(new ThuisVak("Zwart"));
-            l.ElementAt(46).VolgendVak = l.ElementAt(47);
-            l.ElementAt(47).VorigVak = l.ElementAt(46);
-            ////////
-            l.Add(new ThuisVak("Geel"));
-            l.ElementAt(29).ZijVak = l.ElementAt(48);     //48-51 gele thuisvakken
-            l.ElementAt(48).VorigVak = l.ElementAt(29);
-            l.Add(new ThuisVak("Geel"));
-            l.ElementAt(48).VolgendVak = l.ElementAt(49);
-            l.ElementAt(49).VorigVak = l.ElementAt(48);
-            l.Add(new ThuisVak("Geel"));
-            l.ElementAt(49).VolgendVak = l.ElementAt(50);
-            l.ElementAt(50).VorigVak = l.ElementAt(49);
-            l.Add(new ThuisVak("Geel"));
-            l.ElementAt(50).VolgendVak = l.ElementAt(51);
-            l.ElementAt(51).VorigVak = l.ElementAt(50);
-            ////////
-            l.Add(new ThuisVak("Rood"));
-            l.ElementAt(39).ZijVak = l.ElementAt(52);     //52-55 rode thuisvakken
-            l.ElementAt(52).VorigVak = l.ElementAt(19);
-            l.Add(new ThuisVak("Rood"));
-            l.ElementAt(52).VolgendVak = l.ElementAt(53);
-            l.ElementAt(53).VorigVak = l.ElementAt(52);
-            l.Add(new ThuisVak("Rood"));
-            l.ElementAt(53).VolgendVak = l.ElementAt(54);
-            l.ElementAt(54).VorigVak = l.ElementAt(53);
-            l.Add(new ThuisVak("Rood"));
-            l.ElementAt(54).VolgendVak = l.ElementAt(55);
-            l.ElementAt(55).VorigVak = l.ElementAt(54);
-            ////////
+            else
+            {
+                for (int c = 30; c < 40; c++)
+                {
+                    l[c] = new Vak();
+                    l[c - 1].VolgendVak = l[c];
+                    l[c].VorigVak = l[c - 1];
+                }
+            }
             
-            if(Spelers >= 2){
-                for(int c = 56; c < 60; c++){
-                    // wachtvak toevoegen voor eerste speler
+            // Thuisvakken initialiseren
+
+            if (spelers >= 2)
+            {
+                // Thuisvakken speler 1
+                l[52] = new ThuisVak("Rood");
+                l[39].ZijVak = l[52];
+                l[52].VorigVak = l[39];
+                for (int c = 53; c < 56; c++)
+                {
+                    l[c] = new ThuisVak("Rood");
+                    l[c - 1].VolgendVak = l[c];
+                    l[c].VorigVak = l[c - 1];
+                }
+                
+                //Thuisvakken speler 2
+                l[40] = new ThuisVak("Blauw");
+                l[9].ZijVak = l[40];
+                l[40].VorigVak = l[9];
+                for (int c = 41; c < 44; c++)
+                {
+                    l[c] = new ThuisVak("Blauw");
+                    l[c - 1].VolgendVak = l[c];
+                    l[c].VorigVak = l[c - 1];
+                }
+            }
+
+            if (spelers >= 3)
+            {
+                l[44] = new ThuisVak("Zwart");
+                l[19].ZijVak = l[44];
+                l[44].VorigVak = l[19];
+                for (int c = 44; c < 48; c++)
+                {
+                    l[c] = new ThuisVak("Zwart");
+                    l[c - 1].VolgendVak = l[c];
+                    l[c].VorigVak = l[c - 1];
+                }
+            }
+
+            if (spelers == 4)
+            {
+                l[48] = new ThuisVak("Geel");
+                l[29].ZijVak = l[48];
+                l[48].VorigVak = l[29];
+                for (int c = 48; c < 52; c++)
+                {
+                    l[c] = new ThuisVak("Geel");
+                    l[c - 1].VolgendVak = l[c];
+                    l[c].VorigVak = l[c - 1];
+                }
+            }
+
+            return l.ToList();
+        }
+
+        public void MaakWachtVakken(List<Speler> Spelers, List<Vak> Vakken)
+        {
+            int aantalSpelers = 0;
+
+            foreach (Speler s in Spelers)
+            {
+                if (s != null)
+                {
+                    aantalSpelers++;
+                }
+            }
+
+            if (aantalSpelers >= 2)
+            {
+                for (int c = 56; c < 60; c++)
+                {
+                    Vakken[c] = new WachtVak(new Pion(Spelers[0]), "Rood");
                 }
 
                 for (int c = 60; c < 64; c++)
                 {
-                    // wachtvak toevoegen voor tweede speler
+                    Vakken[c] = new WachtVak(new Pion(Spelers[1]), "Blauw");
                 }
             }
 
-            if (Spelers >= 3)
+            if (aantalSpelers >= 3)
             {
                 for (int c = 64; c < 68; c++)
                 {
-                    // wachtvak toevoegen voor derde speler
+                    Vakken[c] = new WachtVak(new Pion(Spelers[2]), "Zwart");
                 }
             }
 
-            if (Spelers >= 4)
+            if (aantalSpelers == 4)
             {
                 for (int c = 68; c < 72; c++)
                 {
-                    // wachtvak toevoegen voor vierde speler
+                    Vakken[c] = new WachtVak(new Pion(Spelers[3]), "Geel");
                 }
             }
-            
-            return l;
         }
 
     }

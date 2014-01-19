@@ -60,8 +60,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\Bord_OLD.cs" />
     <Compile Include="Model\Bord.cs" />
-    <Compile Include="Model\Bord2.cs" />
     <Compile Include="Model\BordMaker.cs" />
     <Compile Include="Model\DobbelsteenSingleton.cs" />
     <Compile Include="Model\Pion.cs" />

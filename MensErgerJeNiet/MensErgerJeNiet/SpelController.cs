@@ -9,11 +9,11 @@ namespace MensErgerJeNiet
 {
     public class SpelController
     {
-        public Bord2 bord { get; set; }
+        public Bord bord { get; set; }
 
         public SpelController(int realSpelers, int computerSpelers)
         {
-            bord = new Bord2(realSpelers, computerSpelers);
+            bord = new Bord(realSpelers, computerSpelers);
             //new MensErgerJeNiet.Model.Bord2(realSpelers, computerSpelers);
             Console.WriteLine("eind");
         }
