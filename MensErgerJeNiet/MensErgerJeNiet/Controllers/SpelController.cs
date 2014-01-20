@@ -66,19 +66,28 @@ namespace MensErgerJeNiet
                     if (PionInSpelBrengen())
                     {
                         HuidigOnderdeel = "Dobbel";
-                        SpeelSpel();
+                        VolgendeBeurt();
                         //set text;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Er gaat iets mis in de case Spel_Beginnen tijdens het PionInSpelBrengen(). Deze hoort de waarde true te returnen maar doet dit niet.");
                     }
                     break;
                 case "Lopen":
                     if (PionLopen(DobbelWaarde))
                     {
                         CheckGewonnen();
-                        VolgendeBeurt();
                         HuidigOnderdeel = "Dobbel";
+                        VolgendeBeurt();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Er gaat iets mis in de case Lopen tijdens het PionLopen met dobbelwaarde " + DobbelWaarde);
                     }
                     break;
                 case "Dobbel":
+                    GooiDobbelSteen();
                     if (DobbelWaarde < 6)
                     {
                         if (CheckPionInSpel())
@@ -105,7 +114,12 @@ namespace MensErgerJeNiet
                     if (PionLopen(DobbelWaarde))
                     {
                         HuidigOnderdeel = "Dobbel";
+                        VolgendeBeurt();
                         //set text
+                    }
+                    else
+                    {
+                        MessageBox.Show("Er gaat iets mis in de case Zes tijdens het PionLopen met dobbelwaarde " + DobbelWaarde);
                     }
 
                     if (PionInSpelBrengen())
@@ -126,7 +140,6 @@ namespace MensErgerJeNiet
                 if (bord.SpelVakken[FieldValue].Pion.Eigenaar.Kleur.Equals(Beurt) && !(FieldValue > 39)) //max vakken
                 {
                     bord.SpelVakken[FieldValue].Verplaats(steps);
-                    OnPropertyChanged("Bord");
                     return true;
                 }
             }
@@ -222,37 +235,26 @@ namespace MensErgerJeNiet
                     {
                         if (DobbelWedstrijd.Max() == DobbelWedstrijd[i])
                         {
+                            gameWindow.VorigeSpelerBeurt.Content = Beurt;
+
                             switch (i)
                             {
                                 case 0:
-                                    gameWindow.VorigeSpelerBeurt.Content = Beurt;
                                     Beurt = "Rood";
-                                    HuidigOnderdeel = "Spel_Beginnen";
-                                    gameWindow.SpelerAanDeBeurt.Content = Beurt;
-                                    //setOnderdeel();
                                     break;
                                 case 1:
-                                    gameWindow.VorigeSpelerBeurt.Content = Beurt;
                                     Beurt = "Blauw";
-                                    HuidigOnderdeel = "Spel_Beginnen";
-                                    gameWindow.SpelerAanDeBeurt.Content = Beurt;
-                                    //setOnderdeel();
                                     break;
                                 case 2:
-                                    gameWindow.VorigeSpelerBeurt.Content = Beurt;
                                     Beurt = "Zwart";
-                                    HuidigOnderdeel = "Spel_Beginnen";
-                                    gameWindow.SpelerAanDeBeurt.Content = Beurt;
-                                    //setOnderdeel();
                                     break;
                                 case 3:
-                                    gameWindow.VorigeSpelerBeurt.Content = Beurt;
                                     Beurt = "Geel";
-                                    HuidigOnderdeel = "Spel_Beginnen";
-                                    gameWindow.SpelerAanDeBeurt.Content = Beurt;
-                                    //setOnderdeel();
                                     break;
                             }
+
+                            HuidigOnderdeel = "Spel_Beginnen";
+                            gameWindow.SpelerAanDeBeurt.Content = Beurt;
                         }
                     }
                 }
@@ -261,10 +263,6 @@ namespace MensErgerJeNiet
                     VolgendeBeurt();
                 }
             
-        }
-
-        public void BrengPionInSpel()
-        {
         }
 
         private void VolgendeBeurt()
