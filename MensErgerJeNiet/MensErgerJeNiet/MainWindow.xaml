@@ -18,10 +18,10 @@
     </Window.Resources>
 
     <Grid x:Name="LayoutRoot" Margin="0,0,-8,-8" >
-        <Button x:Name="btn_StartNieuwSpel" Content="Start spel" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="151" Height="32" Click="NewGameButton_Click"/>
+        <Button x:Name="btn_StartNieuwSpel" Content="Start spel" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" Width="151" Height="32" Click="NewGameButton_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="93,230,0,0" TextWrapping="Wrap" Text="{Binding Game.PlayerInTurn.Colour}" VerticalAlignment="Top" Width="55"/>
-        <TextBox x:Name="humanPlayers" HorizontalAlignment="Left" Height="17" Margin="111,16,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="20"/>
-        <TextBox x:Name="computerPlayers" HorizontalAlignment="Left" Height="17" Margin="111,38,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="20"/>
+        <TextBox x:Name="humanPlayers" HorizontalAlignment="Left" Height="17" Margin="111,19,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="20"/>
+        <TextBox x:Name="computerPlayers" HorizontalAlignment="Left" Height="17" Margin="111,44,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="20"/>
         <TextBlock HorizontalAlignment="Left" Margin="26,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-gb" Text="Spelers:"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="26,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-gb" Text="Computer:"/></TextBlock>
     </Grid>
