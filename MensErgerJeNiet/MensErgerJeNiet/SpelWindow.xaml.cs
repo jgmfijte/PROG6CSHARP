@@ -33,7 +33,7 @@ namespace MensErgerJeNiet.Model
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            spel.SpeelSpel(100);
+            spel.SpeelSpel();
             //spel.GooiDobbelSteen();
         }
 

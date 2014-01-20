@@ -27,7 +27,7 @@ namespace MensErgerJeNiet
                 }
                 Pion.Eigenaar.StartVak.KrijgPion(Pion);
                 Pion = null;
-                base.SetImage("Leeg");
+                this.SetImage("Leeg");
             }
         }
     }

@@ -18,10 +18,13 @@ namespace MensErgerJeNiet
         private int ComputerSpelers { get; set; }
         private string HuidigOnderdeel { get; set; }
         private string Beurt { get; set; }
+        private string VorigeBeurt { get; set; }
         private int AantalSpelers { get; set; }
         private int DobbelWaarde { get; set; }
         private int[] DobbelWedstrijd;
+        private int FieldValue { get; set; }
         private int WedstrijdRonde;
+        private bool canUseButtons = false;
 
         public SpelController(int realSpelers, int computerSpelers, SpelWindow gameWindow)
         {
@@ -35,9 +38,9 @@ namespace MensErgerJeNiet
             DobbelWedstrijd = new int[4];
             HuidigOnderdeel = "Spel_Start";
             Beurt = "Rood";
-            OnPropertyChanged("Beurt");
 
             gameWindow.SpelerAanDeBeurt.Content = Beurt;
+            gameWindow.VorigeSpelerBeurt.Content = "";
             gameWindow.ForegroundText.Content = "Hier komt wat aanvullende info!";
             // SpeelSpel(100);
 
@@ -52,22 +55,23 @@ namespace MensErgerJeNiet
             }
         }
 
-        public void SpeelSpel(int s)
+        public void SpeelSpel()
         {
             switch (HuidigOnderdeel)
             {
                 case "Spel_Start":
-                    DobbelOnderdeel(s);
+                    DobbelOnderdeel();
                     break;
                 case "Spel_Beginnen":
-                    if (PionInSpelBrengen(s))
+                    if (PionInSpelBrengen())
                     {
-                        HuidigOnderdeel = "DOBBEL";
+                        HuidigOnderdeel = "Dobbel";
+                        SpeelSpel();
                         //set text;
                     }
                     break;
                 case "Lopen":
-                    if (PionLopen(s, DobbelWaarde))
+                    if (PionLopen(DobbelWaarde))
                     {
                         CheckGewonnen();
                         VolgendeBeurt();
@@ -80,6 +84,7 @@ namespace MensErgerJeNiet
                         if (CheckPionInSpel())
                         {
                             HuidigOnderdeel = "Lopen";
+                            SpeelSpel();
                             //set text
                         }
                         else
@@ -89,22 +94,24 @@ namespace MensErgerJeNiet
                             VolgendeBeurt();
                         }
                     }
-                    else
+                    else if(DobbelWaarde == 6)
                     {
                         HuidigOnderdeel = "Zes";
+                        SpeelSpel();
                         //set text
                     }
                     break;
                 case "Zes":
-                    if (PionLopen(s, DobbelWaarde))
+                    if (PionLopen(DobbelWaarde))
                     {
                         HuidigOnderdeel = "Dobbel";
                         //set text
                     }
 
-                    if (PionInSpelBrengen(s))
+                    if (PionInSpelBrengen())
                     {
                         HuidigOnderdeel = "Dobbel";
+                        SpeelSpel();
                         //set text
                     }
                     break;
@@ -112,13 +119,14 @@ namespace MensErgerJeNiet
             }
         }
 
-        public bool PionLopen(int s, int steps)
+        public bool PionLopen(int steps)
         {
-            if (bord.SpelVakken[s].Pion != null)
+            if (bord.SpelVakken[FieldValue].Pion != null)
             {
-                if (bord.SpelVakken[s].Pion.Eigenaar.Kleur.Equals(Beurt) && !(s > 39)) //max vakken
+                if (bord.SpelVakken[FieldValue].Pion.Eigenaar.Kleur.Equals(Beurt) && !(FieldValue > 39)) //max vakken
                 {
-                    bord.SpelVakken[s].Verplaats(steps);
+                    bord.SpelVakken[FieldValue].Verplaats(steps);
+                    OnPropertyChanged("Bord");
                     return true;
                 }
             }
@@ -130,24 +138,22 @@ namespace MensErgerJeNiet
             return false;
         }
 
-        public bool PionInSpelBrengen(int s)
+        public bool PionInSpelBrengen()
         {
-            //Console.WriteLine( s.ToString() + " " + bord.SpelVakken[s]);      
             for (int i = 0; i < 4; i++)
             {
                 for (int j = 0; j < 4; j++)
                 {
                     if (bord.Spelers[i].WachtVakken[j].Pion != null)
                     {
+                        Console.WriteLine(bord.Spelers[i].WachtVakken[j].Pion.Eigenaar.Kleur);
+                        Console.WriteLine(Beurt);
+
                         if (bord.Spelers[i].WachtVakken[j].Pion.Eigenaar.Kleur.Equals(Beurt))
                         {
                             bord.Spelers[i].WachtVakken[j].BrengPionInSpel();
                             bord.Spelers[i].WachtVakken[j].Pion = null;
                             return true;
-                        }
-                        else
-                        {
-                            return false;
                         }
                     }
                     else
@@ -184,13 +190,10 @@ namespace MensErgerJeNiet
         }
 
 
-        public void GooiDobbelSteen(int s)
+        public void GooiDobbelSteen()
         {
-            if (s == 100)
-            {
-            DobbelWaarde = DobbelsteenSingleton.Instance.GooiDobbelsteen();
-            gameWindow.DobbelValue.Content = DobbelWaarde;
-            }
+             DobbelWaarde = DobbelsteenSingleton.Instance.GooiDobbelsteen();
+             gameWindow.DobbelValue.Content = DobbelWaarde;
         }
 
         private void CheckGewonnen()
@@ -201,17 +204,16 @@ namespace MensErgerJeNiet
                 {
                     if (bord.Spelers[i].ThuisVakkenVol())
                     {
-                        gameWindow.ForegroundText.Content = bord.Spelers[i].Kleur + "wint het spel!";
+                        gameWindow.ForegroundText.Content = bord.Spelers[i].Kleur + " wint het spel!";
                     }
                 }
             }
         }
 
-        private void DobbelOnderdeel(int s)
+        private void DobbelOnderdeel()
         {
-            if (s == 100)
-            {
-                GooiDobbelSteen(s);
+            
+                GooiDobbelSteen();
                 DobbelWedstrijd[WedstrijdRonde] = DobbelWaarde;
                 WedstrijdRonde++;
                 if (WedstrijdRonde == AantalSpelers)
@@ -223,27 +225,31 @@ namespace MensErgerJeNiet
                             switch (i)
                             {
                                 case 0:
+                                    gameWindow.VorigeSpelerBeurt.Content = Beurt;
                                     Beurt = "Rood";
-                                    OnPropertyChanged("Beurt");
                                     HuidigOnderdeel = "Spel_Beginnen";
+                                    gameWindow.SpelerAanDeBeurt.Content = Beurt;
                                     //setOnderdeel();
                                     break;
                                 case 1:
+                                    gameWindow.VorigeSpelerBeurt.Content = Beurt;
                                     Beurt = "Blauw";
-                                    OnPropertyChanged("Beurt");
                                     HuidigOnderdeel = "Spel_Beginnen";
+                                    gameWindow.SpelerAanDeBeurt.Content = Beurt;
                                     //setOnderdeel();
                                     break;
                                 case 2:
+                                    gameWindow.VorigeSpelerBeurt.Content = Beurt;
                                     Beurt = "Zwart";
-                                    OnPropertyChanged("Beurt");
                                     HuidigOnderdeel = "Spel_Beginnen";
+                                    gameWindow.SpelerAanDeBeurt.Content = Beurt;
                                     //setOnderdeel();
                                     break;
                                 case 3:
+                                    gameWindow.VorigeSpelerBeurt.Content = Beurt;
                                     Beurt = "Geel";
-                                    OnPropertyChanged("Beurt");
                                     HuidigOnderdeel = "Spel_Beginnen";
+                                    gameWindow.SpelerAanDeBeurt.Content = Beurt;
                                     //setOnderdeel();
                                     break;
                             }
@@ -254,7 +260,7 @@ namespace MensErgerJeNiet
                 {
                     VolgendeBeurt();
                 }
-            }
+            
         }
 
         public void BrengPionInSpel()
@@ -268,61 +274,70 @@ namespace MensErgerJeNiet
                 case 2:
                     if (Beurt.Equals("Rood"))
                     {
+                        VorigeBeurt = Beurt;
                         Beurt = "Blauw";
-                        OnPropertyChanged("Beurt");
                         gameWindow.SpelerAanDeBeurt.Content = Beurt;
+                        gameWindow.VorigeSpelerBeurt.Content = VorigeBeurt;
                     }
                     else if (Beurt.Equals("Blauw"))
                     {
+                        VorigeBeurt = Beurt;
                         Beurt = "Rood";
-                        OnPropertyChanged("Beurt");
                         gameWindow.SpelerAanDeBeurt.Content = Beurt;
+                        gameWindow.VorigeSpelerBeurt.Content = VorigeBeurt;
                     }
                     break;
                 case 3:
                     if (Beurt.Equals("Rood"))
                     {
+                        VorigeBeurt = Beurt;
                         Beurt = "Blauw";
-                        OnPropertyChanged("Beurt");
                         gameWindow.SpelerAanDeBeurt.Content = Beurt;
+                        gameWindow.VorigeSpelerBeurt.Content = VorigeBeurt;
                     }
                     else if (Beurt.Equals("Blauw"))
                     {
+                        VorigeBeurt = Beurt;
                         Beurt = "Zwart";
-                        OnPropertyChanged("Beurt");
                         gameWindow.SpelerAanDeBeurt.Content = Beurt;
+                        gameWindow.VorigeSpelerBeurt.Content = VorigeBeurt;
                     }
                     else if (Beurt.Equals("Zwart"))
                     {
+                        VorigeBeurt = Beurt;
                         Beurt = "Rood";
-                        OnPropertyChanged("Beurt");
                         gameWindow.SpelerAanDeBeurt.Content = Beurt;
+                        gameWindow.VorigeSpelerBeurt.Content = VorigeBeurt;
                     }
                     break;
                 case 4:
                     if (Beurt.Equals("Rood"))
                     {
+                        VorigeBeurt = Beurt;
                         Beurt = "Blauw";
-                        OnPropertyChanged("Beurt");
                         gameWindow.SpelerAanDeBeurt.Content = Beurt;
+                        gameWindow.VorigeSpelerBeurt.Content = VorigeBeurt;
                     }
                     else if (Beurt.Equals("Blauw"))
                     {
+                        VorigeBeurt = Beurt;
                         Beurt = "Zwart";
-                        OnPropertyChanged("Beurt");
                         gameWindow.SpelerAanDeBeurt.Content = Beurt;
+                        gameWindow.VorigeSpelerBeurt.Content = VorigeBeurt;
                     }
                     else if (Beurt.Equals("Zwart"))
                     {
+                        VorigeBeurt = Beurt;
                         Beurt = "Geel";
-                        OnPropertyChanged("Beurt");
                         gameWindow.SpelerAanDeBeurt.Content = Beurt;
+                        gameWindow.VorigeSpelerBeurt.Content = VorigeBeurt;
                     }
                     else if (Beurt.Equals("Geel"))
                     {
+                        VorigeBeurt = Beurt;
                         Beurt = "Rood";
-                        OnPropertyChanged("Beurt");
                         gameWindow.SpelerAanDeBeurt.Content = Beurt;
+                        gameWindow.VorigeSpelerBeurt.Content = VorigeBeurt;
                     }
                     break;
             }
@@ -344,9 +359,9 @@ namespace MensErgerJeNiet
             try
             {
                 totalValue = int.Parse(totalString);
-                SpeelSpel(totalValue);
-                // in dit try blok de volgende functie aanroepen met de value totalValue. Alle exceptions worden opgevangen, dus moet goedkomen.
-                // aub niet aan de code hierboven zitten.
+
+                FieldValue = totalValue;
+                SpeelSpel();
 
                 Console.WriteLine(totalValue.ToString()); //Deze is voor debug-doeleinden, nog niet verwijderen aub
             }

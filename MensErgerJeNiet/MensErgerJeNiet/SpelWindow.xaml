@@ -465,10 +465,12 @@
         <Label Content="U GOOIDE:" HorizontalAlignment="Left" Margin="741,209,0,0" VerticalAlignment="Top" Width="231" FontSize="30pt" HorizontalContentAlignment="Center" FontWeight="bold" RenderTransformOrigin="0.529,0.154"/>
         <GridSplitter HorizontalAlignment="Left" Height="6" Margin="462,186,0,0" VerticalAlignment="Top" Width="510"/>
         <Button Content="DOBBEL!" HorizontalAlignment="Left" Margin="462,209,0,0" VerticalAlignment="Top" Width="251" FontSize="40" Click="Button_Click" Height="150"/>
-        <Label Content="Momenteel aan de beurt:" HorizontalAlignment="Left" Margin="462,20,0,0" VerticalAlignment="Top" Width="143" Height="27"/>
+        <Label Content="Huidige beurt:" HorizontalAlignment="Left" Margin="462,20,0,0" VerticalAlignment="Top" Width="89" Height="27"/>
         <Label x:Name="DobbelValue" HorizontalAlignment="Left" Margin="741,241,0,0" VerticalAlignment="Top" Height="118" FontSize="90" FontWeight="ExtraBold" HorizontalContentAlignment="Center" Width="231"/>
-        <Label x:Name="SpelerAanDeBeurt" HorizontalAlignment="Left" Margin="610,20,0,0" VerticalAlignment="Top" Height="27" Width="362"/>
-        <Label x:Name="ForegroundText" Content="HIER KOMT FOREGROUND TEXT" HorizontalAlignment="Left" Height="104" Margin="462,65,0,0" VerticalAlignment="Top" Width="510"/>
+        <Label x:Name="SpelerAanDeBeurt" HorizontalAlignment="Left" Margin="556,20,0,0" VerticalAlignment="Top" Height="27" Width="416"/>
+        <Label x:Name="ForegroundText" Content="HIER KOMT FOREGROUND TEXT" HorizontalAlignment="Left" Height="76" Margin="462,93,0,0" VerticalAlignment="Top" Width="510"/>
+        <Label Content="Vorige beurt:" HorizontalAlignment="Left" Margin="462,52,0,0" VerticalAlignment="Top" Width="89" Height="27"/>
+        <Label x:Name="VorigeSpelerBeurt" HorizontalAlignment="Left" Margin="556,52,0,0" VerticalAlignment="Top" Height="27" Width="416"/>
 
     </Grid>
 </Window>

@@ -86,6 +86,9 @@ namespace MensErgerJeNiet.Model
                 l[39] = new PoortVak();
                 l[38].VolgendVak = l[39];
                 l[39].VorigVak = l[38];
+
+                l[39].VolgendVak = l[0];
+                l[0].VorigVak = l[39];
             }
             else
             {
@@ -95,6 +98,8 @@ namespace MensErgerJeNiet.Model
                     l[c - 1].VolgendVak = l[c];
                     l[c].VorigVak = l[c - 1];
                 }
+                l[39].VolgendVak = l[0];
+                l[0].VorigVak = l[39];
             }
             
             // Thuisvakken initialiseren
