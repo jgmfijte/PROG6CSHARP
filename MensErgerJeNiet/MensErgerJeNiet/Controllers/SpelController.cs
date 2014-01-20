@@ -33,9 +33,13 @@ namespace MensErgerJeNiet
 
             WedstrijdRonde = 0;
             DobbelWedstrijd = new int[4];
+            HuidigOnderdeel = "Spel_Start";
+            Beurt = "Rood";
+            OnPropertyChanged("Beurt");
 
             gameWindow.SpelerAanDeBeurt.Content = Beurt;
             gameWindow.ForegroundText.Content = "Hier komt wat aanvullende info!";
+            // SpeelSpel(100);
 
         }
 
@@ -53,7 +57,14 @@ namespace MensErgerJeNiet
             switch (HuidigOnderdeel)
             {
                 case "Spel_Start":
-                    DobbelOnderdeel();
+                    DobbelOnderdeel(s);
+                    break;
+                case "Spel_Beginnen":
+                    if (PionInSpelBrengen(s))
+                    {
+                        HuidigOnderdeel = "DOBBEL";
+                        //set text;
+                    }
                     break;
                 case "Lopen":
                     if (PionLopen(s, DobbelWaarde))
@@ -121,6 +132,7 @@ namespace MensErgerJeNiet
 
         public bool PionInSpelBrengen(int s)
         {
+            //Console.WriteLine( s.ToString() + " " + bord.SpelVakken[s]);      
             for (int i = 0; i < 4; i++)
             {
                 for (int j = 0; j < 4; j++)
@@ -172,10 +184,13 @@ namespace MensErgerJeNiet
         }
 
 
-        public void GooiDobbelSteen()
+        public void GooiDobbelSteen(int s)
         {
+            if (s == 100)
+            {
             DobbelWaarde = DobbelsteenSingleton.Instance.GooiDobbelsteen();
             gameWindow.DobbelValue.Content = DobbelWaarde;
+            }
         }
 
         private void CheckGewonnen()
@@ -192,50 +207,53 @@ namespace MensErgerJeNiet
             }
         }
 
-        private void DobbelOnderdeel()
+        private void DobbelOnderdeel(int s)
         {
-            GooiDobbelSteen();
-            DobbelWedstrijd[WedstrijdRonde] = DobbelWaarde;
-            WedstrijdRonde++;
-            if (WedstrijdRonde == AantalSpelers)
+            if (s == 100)
             {
-                for (int i = 0; i < AantalSpelers; i++)
+                GooiDobbelSteen(s);
+                DobbelWedstrijd[WedstrijdRonde] = DobbelWaarde;
+                WedstrijdRonde++;
+                if (WedstrijdRonde == AantalSpelers)
                 {
-                    if (DobbelWedstrijd.Max() == DobbelWedstrijd[i])
+                    for (int i = 0; i < AantalSpelers; i++)
                     {
-                        switch (i)
+                        if (DobbelWedstrijd.Max() == DobbelWedstrijd[i])
                         {
-                            case 0:
-                                Beurt = "rood";
-                                OnPropertyChanged("Beurt");
-                                HuidigOnderdeel = "SPEL_BEGINNEN";
-                                //setOnderdeel();
-                                break;
-                            case 1:
-                                Beurt = "blauw";
-                                OnPropertyChanged("Beurt");
-                                HuidigOnderdeel = "SPEL_BEGINNEN";
-                                //setOnderdeel();
-                                break;
-                            case 2:
-                                Beurt = "groen";
-                                OnPropertyChanged("Beurt");
-                                HuidigOnderdeel = "SPEL_BEGINNEN";
-                                //setOnderdeel();
-                                break;
-                            case 3:
-                                Beurt = "geel";
-                                OnPropertyChanged("Beurt");
-                                HuidigOnderdeel = "SPEL_BEGINNEN";
-                                //setOnderdeel();
-                                break;
+                            switch (i)
+                            {
+                                case 0:
+                                    Beurt = "Rood";
+                                    OnPropertyChanged("Beurt");
+                                    HuidigOnderdeel = "Spel_Beginnen";
+                                    //setOnderdeel();
+                                    break;
+                                case 1:
+                                    Beurt = "Blauw";
+                                    OnPropertyChanged("Beurt");
+                                    HuidigOnderdeel = "Spel_Beginnen";
+                                    //setOnderdeel();
+                                    break;
+                                case 2:
+                                    Beurt = "Zwart";
+                                    OnPropertyChanged("Beurt");
+                                    HuidigOnderdeel = "Spel_Beginnen";
+                                    //setOnderdeel();
+                                    break;
+                                case 3:
+                                    Beurt = "Geel";
+                                    OnPropertyChanged("Beurt");
+                                    HuidigOnderdeel = "Spel_Beginnen";
+                                    //setOnderdeel();
+                                    break;
+                            }
                         }
                     }
                 }
-            }
-            else
-            {
-                VolgendeBeurt();
+                else
+                {
+                    VolgendeBeurt();
+                }
             }
         }
 
@@ -326,6 +344,7 @@ namespace MensErgerJeNiet
             try
             {
                 totalValue = int.Parse(totalString);
+                SpeelSpel(totalValue);
                 // in dit try blok de volgende functie aanroepen met de value totalValue. Alle exceptions worden opgevangen, dus moet goedkomen.
                 // aub niet aan de code hierboven zitten.
 

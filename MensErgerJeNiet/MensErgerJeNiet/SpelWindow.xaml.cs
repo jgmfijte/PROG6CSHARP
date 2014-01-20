@@ -26,12 +26,15 @@ namespace MensErgerJeNiet.Model
             InitializeComponent();
             
             spel = new SpelController(realSpelers, computerSpelers, this);
+            
             DataContext = spel;
+            //spel.SpeelSpel(100);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            spel.GooiDobbelSteen();
+            spel.SpeelSpel(100);
+            //spel.GooiDobbelSteen();
         }
 
         private void FieldButton_Click(object sender, RoutedEventArgs e)

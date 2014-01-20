@@ -15,7 +15,7 @@ namespace MensErgerJeNiet
             base.SetImage("Leeg");
         }
 
-        public void Verplaats( int steps)
+        public void Verplaats(int steps)
         {
             if (TempPion == null)
             {
