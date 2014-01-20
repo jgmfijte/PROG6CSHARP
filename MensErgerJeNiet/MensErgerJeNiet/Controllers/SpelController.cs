@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace MensErgerJeNiet
 {
@@ -124,7 +125,6 @@ namespace MensErgerJeNiet
             {
                 for (int j = 0; j < 4; j++)
                 {
-
                     if (bord.Spelers[i].WachtVakken[j].Pion != null)
                     {
                         if (bord.Spelers[i].WachtVakken[j].Pion.Eigenaar.Kleur.Equals(Beurt))
@@ -144,6 +144,7 @@ namespace MensErgerJeNiet
                     }
                 }
             }
+            return false;
         }
 
 
@@ -306,6 +307,33 @@ namespace MensErgerJeNiet
                         gameWindow.SpelerAanDeBeurt.Content = Beurt;
                     }
                     break;
+            }
+        }
+
+        public void FieldButtonClicked(string buttonName)
+        {
+            string[] splittedUnderscore = buttonName.Split('_');
+            char[] splittedValues = splittedUnderscore[0].ToCharArray();
+
+            string totalString = "";
+            int totalValue;
+
+            for (int c = 1; c < splittedValues.Length; c++)
+            {
+                totalString += splittedValues[c].ToString();
+            }
+
+            try
+            {
+                totalValue = int.Parse(totalString);
+                // in dit try blok de volgende functie aanroepen met de value totalValue. Alle exceptions worden opgevangen, dus moet goedkomen.
+                // aub niet aan de code hierboven zitten.
+
+                Console.WriteLine(totalValue.ToString()); //Deze is voor debug-doeleinden, nog niet verwijderen aub
+            }
+            catch
+            {
+                MessageBox.Show("Helaas is er iets met het bord niet goed, wij willen u verzoeken om dit te melden bij de makers.");
             }
         }
     }
