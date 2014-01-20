@@ -33,5 +33,11 @@ namespace MensErgerJeNiet.Model
         {
             spel.GooiDobbelSteen();
         }
+
+        private void FieldButton_Click(object sender, RoutedEventArgs e)
+        {
+            var buttonClicked = (Button)sender;
+            spel.FieldButtonClicked(buttonClicked.Name);
+        }
     }
 }
