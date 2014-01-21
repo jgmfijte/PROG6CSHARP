@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace MensErgerJeNiet
 {
@@ -24,7 +25,8 @@ namespace MensErgerJeNiet
         private int[] DobbelWedstrijd;
         private int FieldValue { get; set; }
         private int WedstrijdRonde;
-        private bool canUseButtons = false;
+
+        DispatcherTimer dispatcherTimer = new DispatcherTimer();
 
         public SpelController(int realSpelers, int computerSpelers, SpelWindow gameWindow)
         {
@@ -44,6 +46,9 @@ namespace MensErgerJeNiet
             gameWindow.ForegroundText.Content = "Hier komt wat aanvullende info!";
             // SpeelSpel(100);
 
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
+            dispatcherTimer.Start();
         }
 
         protected void OnPropertyChanged(string name)
@@ -52,6 +57,19 @@ namespace MensErgerJeNiet
             if (handler != null)
             {
                 handler(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            OnPropertyChanged("beurt");
+            OnPropertyChanged("HuidigOnderdeel");
+            OnPropertyChanged("bord");
+            OnPropertyChanged("gameWindow");
+
+            foreach (Vak v in bord.SpelVakken)
+            {
+                OnPropertyChanged("BackgroundImage");
             }
         }
 
@@ -65,7 +83,9 @@ namespace MensErgerJeNiet
                 case "Spel_Beginnen":
                     if (PionInSpelBrengen())
                     {
+                        GooiDobbelSteen();
                         HuidigOnderdeel = "Dobbel";
+                        OnPropertyChanged("bord");
                         VolgendeBeurt();
                         //set text;
                     }
@@ -78,54 +98,60 @@ namespace MensErgerJeNiet
                     if (PionLopen(DobbelWaarde))
                     {
                         CheckGewonnen();
+                        GooiDobbelSteen();
                         HuidigOnderdeel = "Dobbel";
+                        OnPropertyChanged("bord.SpelVakken");
                         VolgendeBeurt();
                     }
                     else
                     {
-                        MessageBox.Show("Er gaat iets mis in de case Lopen tijdens het PionLopen met dobbelwaarde " + DobbelWaarde);
+                        MessageBox.Show("Er gaat iets mis in de case Lopen tijdens het PionLopen met dobbelwaarde " + DobbelWaarde + ". Heb je wel een pion geselecteerd?");
                     }
                     break;
                 case "Dobbel":
-                    GooiDobbelSteen();
                     if (DobbelWaarde < 6)
                     {
                         if (CheckPionInSpel())
                         {
                             HuidigOnderdeel = "Lopen";
+                            OnPropertyChanged("bord.SpelVakken");
                             SpeelSpel();
                             //set text
                         }
                         else
                         {
+                            GooiDobbelSteen();
                             HuidigOnderdeel = "Dobbel";
+                            OnPropertyChanged("bord.SpelVakken");
                             //set text
                             VolgendeBeurt();
                         }
+                        OnPropertyChanged("bord.SpelVakken");
                     }
                     else if(DobbelWaarde == 6)
                     {
                         HuidigOnderdeel = "Zes";
                         SpeelSpel();
                         //set text
+                        OnPropertyChanged("bord.SpelVakken");
                     }
                     break;
                 case "Zes":
                     if (PionLopen(DobbelWaarde))
                     {
+                        GooiDobbelSteen();
                         HuidigOnderdeel = "Dobbel";
+                        OnPropertyChanged("bord.SpelVakken");
                         VolgendeBeurt();
                         //set text
                     }
-                    else
-                    {
-                        MessageBox.Show("Er gaat iets mis in de case Zes tijdens het PionLopen met dobbelwaarde " + DobbelWaarde);
-                    }
-
+                    
                     if (PionInSpelBrengen())
                     {
+                        GooiDobbelSteen();
                         HuidigOnderdeel = "Dobbel";
-                        SpeelSpel();
+                        OnPropertyChanged("bord.SpelVakken");
+                        VolgendeBeurt();
                         //set text
                     }
                     break;
@@ -358,8 +384,15 @@ namespace MensErgerJeNiet
             {
                 totalValue = int.Parse(totalString);
 
-                FieldValue = totalValue;
-                SpeelSpel();
+                Console.WriteLine(bord.SpelVakken[totalValue].GetType().ToString());
+
+                if (bord.SpelVakken[totalValue].Pion != null && !bord.SpelVakken[totalValue].GetType().ToString().Equals("MensErgerJeNiet.WachtVak"))
+                {
+                    if (bord.SpelVakken[totalValue].Pion.Eigenaar.Kleur.Equals(Beurt)){
+                        FieldValue = totalValue;
+                        SpeelSpel();
+                    }
+                }
 
                 Console.WriteLine(totalValue.ToString()); //Deze is voor debug-doeleinden, nog niet verwijderen aub
             }

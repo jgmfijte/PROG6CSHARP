@@ -30,6 +30,34 @@ namespace MensErgerJeNiet
             Pion = p;
         }
 
+        private void SetImageByObjectType()
+        {
+            if (this.GetType().ToString() == "Vak")
+            {
+                SetImage("Leeg");
+            }
+            else if (this.GetType().ToString() == "PoortVak")
+            {
+                SetImage("Leeg");
+            }
+            else if (this.GetType().ToString() == "StartVak")
+            {
+                SetImage(this.VakColor + "Start");
+            }
+            else if (this.GetType().ToString() == "ThuisVak")
+            {
+                SetImage(this.VakColor + "LeegSpelerVak");
+            }
+            else if (this.GetType().ToString() == "WachtVak")
+            {
+                SetImage("Leeg");
+            }
+            else
+            {
+                SetImage("Leeg");
+            }
+        }
+
         public void VerplaatsPion(Pion p, int steps)
         {
             if (TempPion == null)
@@ -39,14 +67,14 @@ namespace MensErgerJeNiet
                     VolgendVak.KrijgPion(Pion);
                     steps -= 1;
                     Pion = null;
-                    SetImage("Leeg");
+                    SetImageByObjectType();
                     VolgendVak.Verplaats(steps);
                 }
                 else if (VolgendVak.Pion != null && steps > 1)
                 {
                     VolgendVak.TempPion = Pion;
                     Pion = null;
-                    SetImage("Leeg");
+                    SetImageByObjectType();
                     steps -= 1;
                     VolgendVak.Verplaats(steps);
                 }
@@ -55,7 +83,7 @@ namespace MensErgerJeNiet
                     VolgendVak.StuurPionTerug(VolgendVak.Pion);
                     VolgendVak.KrijgPion(Pion);
                     Pion = null;
-                    SetImage("Leeg");
+                    SetImageByObjectType();
                     steps -= 1;
                 }
             }
@@ -97,7 +125,7 @@ namespace MensErgerJeNiet
                     VorigVak.KrijgPion(Pion);
                     steps -= 1;
                     Pion = null;
-                    SetImage(Pion.Eigenaar.Kleur + "Thuis");
+                    SetImageByObjectType();
                     if (steps != 0)
                     {
                         VorigVak.VerplaatsPionTerug(steps);
@@ -107,7 +135,7 @@ namespace MensErgerJeNiet
                 {
                     VorigVak.TempPion = Pion;
                     Pion = null;
-                    SetImage(Pion.Eigenaar.Kleur + "Thuis");
+                    SetImageByObjectType();
                     steps -= 1;
                     VorigVak.VerplaatsPionTerug(steps);
                 }
@@ -116,7 +144,7 @@ namespace MensErgerJeNiet
                     VorigVak.Pion.Eigenaar.StartVak.KrijgPion(VorigVak.Pion);
                     VorigVak.KrijgPion(Pion);
                     Pion = null;
-                    SetImage(Pion.Eigenaar.Kleur + "Thuis");
+                    SetImageByObjectType();
                     steps -= 1;
                 }
             }
