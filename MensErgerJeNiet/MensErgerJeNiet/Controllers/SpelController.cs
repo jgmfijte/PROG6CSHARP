@@ -128,7 +128,7 @@ namespace MensErgerJeNiet
                         }
                         OnPropertyChanged("bord.SpelVakken");
                     }
-                    else if(DobbelWaarde == 6)
+                    else if (DobbelWaarde == 6)
                     {
                         HuidigOnderdeel = "Zes";
                         SpeelSpel();
@@ -145,7 +145,7 @@ namespace MensErgerJeNiet
                         VolgendeBeurt();
                         //set text
                     }
-                    
+
                     if (PionInSpelBrengen())
                     {
                         GooiDobbelSteen();
@@ -179,30 +179,29 @@ namespace MensErgerJeNiet
 
         public bool PionInSpelBrengen()
         {
-            for (int i = 0; i < 4; i++)
-            {
-                for (int j = 0; j < 4; j++)
-                {
-                    if (bord.Spelers[i].WachtVakken[j].Pion != null)
-                    {
-                        Console.WriteLine(bord.Spelers[i].WachtVakken[j].Pion.Eigenaar.Kleur);
-                        Console.WriteLine(Beurt);
+            Speler huidigeSpeler = bord.Spelers.First(s => s.Kleur == Beurt);
 
-                        if (bord.Spelers[i].WachtVakken[j].Pion.Eigenaar.Kleur.Equals(Beurt))
-                        {
-                            bord.Spelers[i].WachtVakken[j].BrengPionInSpel();
-                            bord.Spelers[i].WachtVakken[j].Pion = null;
-                            return true;
-                        }
-                    }
-                    else
+            for (int j = 0; j < 4; j++)
+            {
+                if (huidigeSpeler.WachtVakken[j] != null)
+                {
+                    huidigeSpeler.WachtVakken[j].BrengPionInSpel();
+                    huidigeSpeler.WachtVakken[j].Pion = null;
+                    
+                    for (int x = 0; x < 4; x++)
                     {
-                        return false;
+                        Console.WriteLine("testing - " + huidigeSpeler.WachtVakken[x].Pion); 
                     }
+                    return true;
+                }
+                else
+                {
+                    return false;
                 }
             }
             return false;
         }
+
 
 
         public bool CheckPionInSpel()
@@ -231,13 +230,13 @@ namespace MensErgerJeNiet
 
         public void GooiDobbelSteen()
         {
-             DobbelWaarde = DobbelsteenSingleton.Instance.GooiDobbelsteen();
-             gameWindow.DobbelValue.Content = DobbelWaarde;
+            DobbelWaarde = DobbelsteenSingleton.Instance.GooiDobbelsteen();
+            gameWindow.DobbelValue.Content = DobbelWaarde;
         }
 
         private void CheckGewonnen()
         {
-            for (int i = 0; i < bord.Spelers.Count - 1; i++)
+            for (int i = 0; i < AantalSpelers; i++)
             {
                 if (bord.Spelers[i].Kleur.Equals(Beurt))
                 {
@@ -251,44 +250,44 @@ namespace MensErgerJeNiet
 
         private void DobbelOnderdeel()
         {
-            
-                GooiDobbelSteen();
-                DobbelWedstrijd[WedstrijdRonde] = DobbelWaarde;
-                WedstrijdRonde++;
-                if (WedstrijdRonde == AantalSpelers)
+
+            GooiDobbelSteen();
+            DobbelWedstrijd[WedstrijdRonde] = DobbelWaarde;
+            WedstrijdRonde++;
+            if (WedstrijdRonde == AantalSpelers)
+            {
+                for (int i = 0; i < AantalSpelers; i++)
                 {
-                    for (int i = 0; i < AantalSpelers; i++)
+                    if (DobbelWedstrijd.Max() == DobbelWedstrijd[i])
                     {
-                        if (DobbelWedstrijd.Max() == DobbelWedstrijd[i])
+                        gameWindow.VorigeSpelerBeurt.Content = Beurt;
+
+                        switch (i)
                         {
-                            gameWindow.VorigeSpelerBeurt.Content = Beurt;
-
-                            switch (i)
-                            {
-                                case 0:
-                                    Beurt = "Rood";
-                                    break;
-                                case 1:
-                                    Beurt = "Blauw";
-                                    break;
-                                case 2:
-                                    Beurt = "Zwart";
-                                    break;
-                                case 3:
-                                    Beurt = "Geel";
-                                    break;
-                            }
-
-                            HuidigOnderdeel = "Spel_Beginnen";
-                            gameWindow.SpelerAanDeBeurt.Content = Beurt;
+                            case 0:
+                                Beurt = "Rood";
+                                break;
+                            case 1:
+                                Beurt = "Blauw";
+                                break;
+                            case 2:
+                                Beurt = "Zwart";
+                                break;
+                            case 3:
+                                Beurt = "Geel";
+                                break;
                         }
+
+                        HuidigOnderdeel = "Spel_Beginnen";
+                        gameWindow.SpelerAanDeBeurt.Content = Beurt;
                     }
                 }
-                else
-                {
-                    VolgendeBeurt();
-                }
-            
+            }
+            else
+            {
+                VolgendeBeurt();
+            }
+
         }
 
         private void VolgendeBeurt()
@@ -386,14 +385,17 @@ namespace MensErgerJeNiet
 
                 Console.WriteLine(bord.SpelVakken[totalValue].GetType().ToString());
 
-                if (bord.SpelVakken[totalValue].Pion != null && !bord.SpelVakken[totalValue].GetType().ToString().Equals("MensErgerJeNiet.WachtVak"))
+                if (HuidigOnderdeel == "Lopen")
                 {
-                    if (bord.SpelVakken[totalValue].Pion.Eigenaar.Kleur.Equals(Beurt)){
-                        FieldValue = totalValue;
-                        SpeelSpel();
+                    if (bord.SpelVakken[totalValue].Pion != null && !bord.SpelVakken[totalValue].GetType().ToString().Equals("MensErgerJeNiet.WachtVak"))
+                    {
+                        if (bord.SpelVakken[totalValue].Pion.Eigenaar.Kleur.Equals(Beurt))
+                        {
+                            FieldValue = totalValue;
+                            SpeelSpel();
+                        }
                     }
                 }
-
                 Console.WriteLine(totalValue.ToString()); //Deze is voor debug-doeleinden, nog niet verwijderen aub
             }
             catch
